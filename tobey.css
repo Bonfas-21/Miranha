@@ -1,0 +1,9789 @@
+/* =========================================================
+   MIRANHA — TOBEY.CSS
+   VERSÃO NOVA / LIMPA
+
+   PARTE 1/6
+   BASE + MENU + HERO
+========================================================= */
+
+
+/* =========================================================
+   01. RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* =========================================================
+   02. BASE DO TOBEY
+========================================================= */
+
+.pagina-tobey {
+    --vermelho: #c91520;
+    --vermelho-claro: #ed1c2b;
+    --vermelho-escuro: #680910;
+
+    --preto: #050505;
+    --preto-2: #090909;
+    --preto-3: #101010;
+
+    --branco: #f4f1eb;
+    --cinza: #989898;
+    --cinza-escuro: #5f5f5f;
+
+    --borda: rgba(255, 255, 255, 0.11);
+
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 70% 0%,
+            rgba(160, 8, 18, 0.10),
+            transparent 30%
+        ),
+        var(--preto);
+
+    color: var(--branco);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   03. SELEÇÃO
+========================================================= */
+
+.pagina-tobey ::selection {
+    color: #fff;
+    background: var(--vermelho);
+}
+
+
+/* =========================================================
+   04. MENU
+   HTML REAL:
+   .menu-personagem
+   .logo
+   .links-menu
+========================================================= */
+
+.pagina-tobey .menu-personagem {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1000;
+
+    height: 76px;
+
+    padding:
+        0 clamp(24px, 6vw, 90px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+        rgba(5, 5, 5, 0.78);
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+}
+
+
+/* LOGO */
+
+.pagina-tobey .menu-personagem .logo {
+    position: relative;
+
+    color: var(--branco);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        1.55rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.12em;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.pagina-tobey .menu-personagem .logo::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 26px;
+    height: 2px;
+
+    background:
+        var(--vermelho-claro);
+
+    transition:
+        width 0.3s ease;
+}
+
+
+.pagina-tobey .menu-personagem .logo:hover {
+    color:
+        var(--vermelho-claro);
+}
+
+
+.pagina-tobey .menu-personagem .logo:hover::before {
+    width: 100%;
+}
+
+
+/* LINKS */
+
+.pagina-tobey .links-menu {
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        clamp(18px, 3vw, 36px);
+}
+
+
+.pagina-tobey .links-menu a {
+    position: relative;
+
+    padding:
+        29px 0 27px;
+
+    color: #858585;
+
+    font-size: 0.67rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.pagina-tobey .links-menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 2px;
+
+    background:
+        var(--vermelho-claro);
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        center;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.pagina-tobey .links-menu a:hover,
+.pagina-tobey .links-menu a.ativo {
+    color: #fff;
+}
+
+
+.pagina-tobey .links-menu a:hover::after,
+.pagina-tobey .links-menu a.ativo::after {
+    transform:
+        scaleX(1);
+}
+
+
+/* =========================================================
+   05. HERO
+   HTML REAL:
+   .hero-personagem.hero-tobey
+========================================================= */
+
+.pagina-tobey .hero-tobey {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        150px
+        clamp(24px, 8vw, 120px)
+        100px;
+
+    display: flex;
+
+    align-items: center;
+
+    isolation: isolate;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 76% 38%,
+            rgba(195, 17, 29, 0.19),
+            transparent 24%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(4, 4, 4, 1) 0%,
+            rgba(5, 5, 5, 0.96) 34%,
+            rgba(5, 5, 5, 0.72) 64%,
+            rgba(5, 5, 5, 0.92) 100%
+        ),
+
+        #050505;
+}
+
+
+/* VERMELHO CINEMATOGRÁFICO À DIREITA */
+
+.pagina-tobey .hero-tobey::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: -2;
+
+    width:
+        clamp(350px, 45vw, 700px);
+
+    height:
+        clamp(350px, 45vw, 700px);
+
+    right: -12%;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(197, 16, 29, 0.22) 0%,
+            rgba(105, 5, 13, 0.09) 40%,
+            transparent 70%
+        );
+
+    filter:
+        blur(5px);
+
+    pointer-events: none;
+}
+
+
+/* VINHETA */
+
+.pagina-tobey .hero-tobey::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05),
+            transparent 50%,
+            rgba(0, 0, 0, 0.72)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   06. CONTEÚDO DO HERO
+   HTML REAL:
+   .hero-personagem-conteudo
+========================================================= */
+
+.pagina-tobey .hero-personagem-conteudo {
+    position: relative;
+
+    z-index: 5;
+
+    width:
+        min(780px, 100%);
+}
+
+
+/* TERRA */
+
+.pagina-tobey .hero-tobey .universo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 24px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.64rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.28em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .hero-tobey .universo::before {
+    content: "";
+
+    width: 38px;
+    height: 1px;
+
+    background:
+        var(--vermelho-claro);
+}
+
+
+/* =========================================================
+   07. TÍTULO PRINCIPAL
+========================================================= */
+
+.pagina-tobey .hero-tobey h1 {
+    max-width: 850px;
+
+    margin: 0;
+
+    color: var(--branco);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(5rem, 11vw, 10.5rem);
+
+    font-weight: 900;
+
+    line-height: 0.78;
+
+    letter-spacing: -0.045em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.5);
+}
+
+
+.pagina-tobey .hero-tobey h1 span {
+    display: block;
+
+    color:
+        var(--vermelho-claro);
+}
+
+
+/* NOME */
+
+.pagina-tobey .hero-tobey h2 {
+    margin-top: 27px;
+
+    color: #858585;
+
+    font-size:
+        clamp(0.78rem, 1.5vw, 1rem);
+
+    font-weight: 700;
+
+    letter-spacing: 0.42em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   08. FRASE
+========================================================= */
+
+.pagina-tobey .frase-personagem {
+    position: relative;
+
+    max-width: 580px;
+
+    margin-top: 35px;
+
+    padding-left: 21px;
+
+    border-left:
+        2px solid
+        var(--vermelho);
+
+    color: #aaa6a0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(0.92rem, 1.4vw, 1.05rem);
+
+    font-style: italic;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   09. BOTÕES DO HERO
+========================================================= */
+
+.pagina-tobey .hero-botoes {
+    margin-top: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.pagina-tobey .botao-vermelho,
+.pagina-tobey .botao-secundario {
+    min-height: 49px;
+
+    padding:
+        0 23px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0.61rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* PRINCIPAL */
+
+.pagina-tobey .botao-vermelho {
+    border:
+        1px solid
+        var(--vermelho);
+
+    background:
+        var(--vermelho);
+
+    color: #fff;
+
+    box-shadow:
+        0 12px 35px
+        rgba(165, 8, 20, 0.18);
+}
+
+
+.pagina-tobey .botao-vermelho:hover {
+    transform:
+        translateY(-3px);
+
+    background:
+        var(--vermelho-claro);
+
+    border-color:
+        var(--vermelho-claro);
+}
+
+
+/* SECUNDÁRIO */
+
+.pagina-tobey .botao-secundario {
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color: #aaa;
+}
+
+
+.pagina-tobey .botao-secundario:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(255, 255, 255, 0.38);
+
+    color: #fff;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   10. INDICADOR DE SCROLL
+   HTML REAL:
+   .scroll-indicador
+========================================================= */
+
+.pagina-tobey .scroll-indicador {
+    position: absolute;
+
+    z-index: 5;
+
+    right:
+        clamp(24px, 6vw, 90px);
+
+    bottom: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    color: #5c5c5c;
+}
+
+
+.pagina-tobey .scroll-indicador span {
+    font-size: 0.5rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+
+.pagina-tobey .scroll-indicador div {
+    position: relative;
+
+    width: 54px;
+    height: 1px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+}
+
+
+.pagina-tobey .scroll-indicador div::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 45%;
+    height: 100%;
+
+    background:
+        var(--vermelho-claro);
+
+    animation:
+        scrollTobey
+        1.8s ease-in-out
+        infinite;
+}
+
+
+@keyframes scrollTobey {
+
+    0% {
+        transform:
+            translateX(-120%);
+    }
+
+    50% {
+        transform:
+            translateX(110%);
+    }
+
+    100% {
+        transform:
+            translateX(260%);
+    }
+
+}
+
+
+/* =========================================================
+   11. BASE PARA AS PRÓXIMAS SEÇÕES
+
+   Ainda NÃO estamos estilizando História,
+   Poderes, Timeline etc.
+========================================================= */
+
+.pagina-tobey section {
+    position: relative;
+}
+
+
+/* deixa o conteúdo existente visível enquanto
+   construímos as próximas partes */
+
+.pagina-tobey .secao-animada {
+    opacity: 1;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   12. RESPONSIVO — MENU + HERO
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .pagina-tobey .menu-personagem {
+        height: 66px;
+
+        padding:
+            0 20px;
+    }
+
+
+    .pagina-tobey .menu-personagem .logo {
+        font-size: 1.25rem;
+    }
+
+
+    .pagina-tobey .links-menu {
+        gap: 13px;
+    }
+
+
+    .pagina-tobey .links-menu a {
+        padding:
+            25px 0 23px;
+
+        font-size: 0.56rem;
+
+        letter-spacing: 0.08em;
+    }
+
+
+    .pagina-tobey .hero-tobey {
+        min-height: 780px;
+
+        padding:
+            125px 22px
+            90px;
+
+        align-items: center;
+    }
+
+
+    .pagina-tobey .hero-tobey h1 {
+        font-size:
+            clamp(4.6rem, 21vw, 7rem);
+    }
+
+
+    .pagina-tobey .hero-tobey h2 {
+        letter-spacing: 0.25em;
+    }
+
+
+    .pagina-tobey .frase-personagem {
+        max-width: 480px;
+    }
+
+
+    .pagina-tobey .scroll-indicador {
+        left: 22px;
+        right: auto;
+
+        bottom: 28px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .pagina-tobey .menu-personagem {
+        padding:
+            0 15px;
+    }
+
+
+    .pagina-tobey .menu-personagem .logo {
+        font-size: 1.08rem;
+    }
+
+
+    .pagina-tobey .links-menu {
+        gap: 9px;
+    }
+
+
+    .pagina-tobey .links-menu a {
+        font-size: 0.49rem;
+    }
+
+
+    .pagina-tobey .hero-tobey {
+        min-height: 720px;
+
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .pagina-tobey .hero-tobey h1 {
+        font-size:
+            clamp(4rem, 22vw, 5.7rem);
+    }
+
+
+    .pagina-tobey .hero-botoes {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .pagina-tobey .botao-vermelho,
+    .pagina-tobey .botao-secundario {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   FIM — PARTE 1/6
+========================================================= */
+
+/* =========================================================
+   MIRANHA — TOBEY.CSS
+
+   PARTE 2/6
+   HISTÓRIA + NASCIMENTO DO HERÓI + PODERES
+========================================================= */
+
+
+/* =========================================================
+   13. SEÇÕES GERAIS
+========================================================= */
+
+.pagina-tobey .secao-personagem,
+.pagina-tobey .secao-escura {
+    position: relative;
+
+    padding:
+        clamp(90px, 10vw, 145px)
+        clamp(24px, 8vw, 120px);
+
+    overflow: hidden;
+}
+
+
+.pagina-tobey .secao-personagem {
+    background:
+        linear-gradient(
+            180deg,
+            #0b0b0b 0%,
+            #080808 100%
+        );
+}
+
+
+.pagina-tobey .secao-escura {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(170, 8, 18, 0.08),
+            transparent 30%
+        ),
+        #050505;
+}
+
+
+/* =========================================================
+   14. TÍTULOS DAS SEÇÕES
+
+   HTML:
+   .titulo-secao
+       p
+       h2
+========================================================= */
+
+.pagina-tobey .titulo-secao {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1180px, 100%);
+
+    margin:
+        0 auto
+        clamp(55px, 7vw, 90px);
+}
+
+
+.pagina-tobey .titulo-secao > p {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 17px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.61rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .titulo-secao > p::before {
+    content: "";
+
+    width: 34px;
+    height: 1px;
+
+    background:
+        var(--vermelho-claro);
+}
+
+
+.pagina-tobey .titulo-secao > h2 {
+    margin: 0;
+
+    color:
+        var(--branco);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(3.6rem, 7vw, 7.4rem);
+
+    font-weight: 900;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.035em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   15. HISTÓRIA
+========================================================= */
+
+.pagina-tobey #historia {
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 82% 35%,
+            rgba(164, 10, 20, 0.08),
+            transparent 25%
+        ),
+        linear-gradient(
+            180deg,
+            #0b0b0b 0%,
+            #080808 100%
+        );
+}
+
+
+/* PALAVRA GIGANTE AO FUNDO */
+
+.pagina-tobey #historia::before {
+    content: "PARKER";
+
+    position: absolute;
+
+    top: 115px;
+    right: -20px;
+
+    z-index: -1;
+
+    color:
+        rgba(255, 255, 255, 0.018);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(8rem, 19vw, 20rem);
+
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   16. GRID DA HISTÓRIA
+========================================================= */
+
+.pagina-tobey .historia-grid {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1180px, 100%);
+
+    margin:
+        0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(380px, 1.1fr);
+
+    align-items: center;
+
+    gap:
+        clamp(50px, 8vw, 115px);
+}
+
+
+/* =========================================================
+   17. TEXTO DA HISTÓRIA
+========================================================= */
+
+.pagina-tobey .historia-texto {
+    position: relative;
+
+    max-width: 530px;
+
+    padding-left: 27px;
+
+    border-left:
+        1px solid
+        rgba(255, 255, 255, 0.11);
+}
+
+
+.pagina-tobey .historia-texto::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -1px;
+
+    width: 2px;
+    height: 75px;
+
+    background:
+        var(--vermelho-claro);
+}
+
+
+.pagina-tobey .historia-texto p {
+    margin:
+        0 0 22px;
+
+    color: #a8a8a8;
+
+    font-size:
+        clamp(0.9rem, 1.25vw, 1rem);
+
+    line-height: 1.85;
+}
+
+
+.pagina-tobey .historia-texto p:first-child {
+    color: #dedbd5;
+
+    font-size:
+        clamp(1rem, 1.5vw, 1.12rem);
+}
+
+
+.pagina-tobey .historia-texto p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   18. IMAGEM DA HISTÓRIA
+
+   Mantemos tamanho controlado.
+   Nada de imagem gigante.
+========================================================= */
+
+.pagina-tobey .historia-imagem {
+    position: relative;
+
+    width: 100%;
+
+    height:
+        clamp(430px, 46vw, 620px);
+
+    overflow: hidden;
+
+    background: #111;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 35px 80px
+        rgba(0, 0, 0, 0.45);
+}
+
+
+.pagina-tobey .historia-imagem::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.15) 45%,
+            transparent 70%
+        );
+}
+
+
+.pagina-tobey .historia-imagem::after {
+    content: "";
+
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+    z-index: 4;
+
+    width: 42px;
+    height: 42px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.45);
+
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.45);
+
+    pointer-events: none;
+}
+
+
+.pagina-tobey .historia-imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter:
+        saturate(0.82)
+        contrast(1.05);
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+
+.pagina-tobey .historia-imagem:hover img {
+    transform:
+        scale(1.025);
+
+    filter:
+        saturate(1)
+        contrast(1.04);
+}
+
+
+/* =========================================================
+   19. LEGENDA DA IMAGEM
+========================================================= */
+
+.pagina-tobey .imagem-legenda {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 25px;
+    right: 25px;
+    bottom: 23px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.pagina-tobey .imagem-legenda span {
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.55rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .imagem-legenda strong {
+    color: #fff;
+
+    font-size: 0.59rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+
+    text-align: right;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   20. FICHA HORIZONTAL
+========================================================= */
+
+.pagina-tobey .ficha-horizontal {
+    position: relative;
+
+    width:
+        min(1180px, 100%);
+
+    margin:
+        clamp(65px, 8vw, 100px)
+        auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    border-top:
+        1px solid
+        var(--borda);
+
+    border-bottom:
+        1px solid
+        var(--borda);
+}
+
+
+.pagina-tobey .ficha-horizontal > div {
+    position: relative;
+
+    min-height: 105px;
+
+    padding:
+        24px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 9px;
+}
+
+
+.pagina-tobey .ficha-horizontal > div:not(:last-child) {
+    border-right:
+        1px solid
+        var(--borda);
+}
+
+
+.pagina-tobey .ficha-horizontal span {
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.51rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.19em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .ficha-horizontal strong {
+    color: #d6d3cd;
+
+    font-size: 0.77rem;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   21. NASCIMENTO DO HERÓI
+
+   HTML:
+   .momento-aranha
+       img
+       .momento-overlay
+       .momento-conteudo
+========================================================= */
+
+.pagina-tobey .momento-aranha {
+    position: relative;
+
+    width: 100%;
+
+    min-height:
+        clamp(580px, 68vw, 820px);
+
+    display: flex;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background: #050505;
+}
+
+
+/* IMAGEM */
+
+.pagina-tobey .momento-aranha > img {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -4;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter:
+        saturate(0.88)
+        contrast(1.08);
+}
+
+
+/* OVERLAY DO HTML */
+
+.pagina-tobey .momento-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -3;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 4, 4, 0.98) 0%,
+            rgba(4, 4, 4, 0.82) 35%,
+            rgba(4, 4, 4, 0.28) 68%,
+            rgba(4, 4, 4, 0.12) 100%
+        );
+}
+
+
+/* VINHETA EXTRA */
+
+.pagina-tobey .momento-aranha::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.88) 0%,
+            transparent 55%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   22. TEXTO DO MOMENTO
+========================================================= */
+
+.pagina-tobey .momento-conteudo {
+    position: relative;
+
+    z-index: 4;
+
+    width:
+        min(1180px, calc(100% - 48px));
+
+    margin:
+        0 auto;
+
+    padding-bottom:
+        clamp(70px, 9vw, 120px);
+}
+
+
+.pagina-tobey .momento-conteudo > p:first-child {
+    margin-bottom: 19px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.59rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .momento-conteudo h2 {
+    max-width: 760px;
+
+    margin: 0;
+
+    color: #fff;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(3.5rem, 7.5vw, 8rem);
+
+    font-weight: 900;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.035em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .momento-conteudo h2 span {
+    display: block;
+
+    color:
+        var(--vermelho-claro);
+}
+
+
+.pagina-tobey .momento-texto {
+    max-width: 540px;
+
+    margin-top: 27px;
+
+    color: #b4b1ac;
+
+    font-size:
+        clamp(0.88rem, 1.3vw, 1rem);
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   23. PODERES
+========================================================= */
+
+.pagina-tobey .secao-escura {
+    isolation: isolate;
+}
+
+
+.pagina-tobey .secao-escura::before {
+    content: "POWER";
+
+    position: absolute;
+
+    z-index: -1;
+
+    top: 90px;
+    right: -25px;
+
+    color:
+        rgba(255, 255, 255, 0.016);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(9rem, 20vw, 21rem);
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   24. GRID DOS PODERES
+========================================================= */
+
+.pagina-tobey .poderes-grid {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1180px, 100%);
+
+    margin:
+        0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top:
+        1px solid
+        var(--borda);
+
+    border-left:
+        1px solid
+        var(--borda);
+}
+
+
+/* =========================================================
+   25. CARD DE PODER
+========================================================= */
+
+.pagina-tobey .poder-card {
+    position: relative;
+
+    min-height: 285px;
+
+    padding:
+        35px 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    overflow: hidden;
+
+    border-right:
+        1px solid
+        var(--borda);
+
+    border-bottom:
+        1px solid
+        var(--borda);
+
+    background:
+        rgba(255, 255, 255, 0.015);
+
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+.pagina-tobey .poder-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 2px;
+    height: 0;
+
+    background:
+        var(--vermelho-claro);
+
+    transition:
+        height 0.35s ease;
+}
+
+
+.pagina-tobey .poder-card:hover {
+    z-index: 3;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+}
+
+
+.pagina-tobey .poder-card:hover::before {
+    height: 100%;
+}
+
+
+/* NÚMERO */
+
+.pagina-tobey .poder-card > span {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    color:
+        rgba(255, 255, 255, 0.10);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size: 3.7rem;
+
+    line-height: 1;
+
+    transition:
+        color 0.35s ease;
+}
+
+
+.pagina-tobey .poder-card:hover > span {
+    color:
+        rgba(237, 28, 43, 0.24);
+}
+
+
+/* TÍTULO */
+
+.pagina-tobey .poder-card h3 {
+    position: relative;
+
+    margin:
+        0 0 13px;
+
+    color: #efede8;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(1.35rem, 2vw, 1.8rem);
+
+    font-weight: 900;
+
+    letter-spacing: 0.02em;
+
+    text-transform: uppercase;
+}
+
+
+/* TEXTO */
+
+.pagina-tobey .poder-card p {
+    max-width: 260px;
+
+    margin: 0;
+
+    color: #828282;
+
+    font-size: 0.79rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   26. TEIA ORGÂNICA — DESTAQUE
+========================================================= */
+
+.pagina-tobey .poder-card.destaque-poder {
+    grid-column:
+        span 4;
+
+    min-height: 220px;
+
+    padding:
+        40px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(130, 5, 14, 0.27),
+            rgba(22, 5, 7, 0.68) 45%,
+            rgba(255, 255, 255, 0.018)
+        );
+}
+
+
+.pagina-tobey .poder-card.destaque-poder::after {
+    content: "ORGANIC WEB";
+
+    position: absolute;
+
+    right: 30px;
+    bottom: -17px;
+
+    color:
+        rgba(255, 255, 255, 0.025);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(4rem, 9vw, 8rem);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+
+.pagina-tobey .poder-card.destaque-poder h3 {
+    color:
+        var(--vermelho-claro);
+
+    font-size:
+        clamp(2rem, 3.5vw, 3.3rem);
+}
+
+
+.pagina-tobey .poder-card.destaque-poder p {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 540px;
+
+    color: #aaa;
+}
+
+
+/* =========================================================
+   27. RESPONSIVO — PARTE 2
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .pagina-tobey .historia-grid {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 45px;
+    }
+
+
+    .pagina-tobey .ficha-horizontal {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .pagina-tobey .ficha-horizontal > div {
+        border-bottom:
+            1px solid
+            var(--borda);
+    }
+
+
+    .pagina-tobey .poderes-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .pagina-tobey .poder-card.destaque-poder {
+        grid-column:
+            span 2;
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .pagina-tobey .secao-personagem,
+    .pagina-tobey .secao-escura {
+        padding:
+            85px 22px;
+    }
+
+
+    .pagina-tobey .titulo-secao {
+        margin-bottom: 48px;
+    }
+
+
+    .pagina-tobey .historia-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 50px;
+    }
+
+
+    .pagina-tobey .historia-texto {
+        max-width: none;
+    }
+
+
+    .pagina-tobey .historia-imagem {
+        height:
+            clamp(420px, 115vw, 590px);
+    }
+
+
+    .pagina-tobey .ficha-horizontal {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        margin-top: 60px;
+    }
+
+
+    .pagina-tobey .ficha-horizontal > div {
+        min-height: 90px;
+    }
+
+
+    .pagina-tobey .momento-aranha {
+        min-height: 650px;
+    }
+
+
+    .pagina-tobey .momento-overlay {
+        background:
+            linear-gradient(
+                to top,
+                rgba(4, 4, 4, 0.98) 0%,
+                rgba(4, 4, 4, 0.80) 45%,
+                rgba(4, 4, 4, 0.20) 100%
+            );
+    }
+
+
+    .pagina-tobey .momento-conteudo {
+        width:
+            calc(100% - 44px);
+
+        padding-bottom: 70px;
+    }
+
+
+    .pagina-tobey .poder-card {
+        min-height: 245px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .pagina-tobey .ficha-horizontal {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey .ficha-horizontal > div {
+        border-right:
+            1px solid
+            var(--borda);
+    }
+
+
+    .pagina-tobey .poderes-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey .poder-card {
+        min-height: 220px;
+    }
+
+
+    .pagina-tobey .poder-card.destaque-poder {
+        grid-column:
+            span 1;
+
+        min-height: 290px;
+
+        padding:
+            32px 27px;
+    }
+
+
+    .pagina-tobey .poder-card.destaque-poder::after {
+        font-size: 4rem;
+
+        right: 15px;
+    }
+
+
+    .pagina-tobey .imagem-legenda {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   FIM — PARTE 2/6
+========================================================= */
+
+/* =========================================================
+   MIRANHA — TOBEY.CSS
+
+   PARTE 3/6
+   TRILOGIA + TIMELINE CINEMATOGRÁFICA
+========================================================= */
+
+
+/* =========================================================
+   28. SEÇÃO DA TRILOGIA
+========================================================= */
+
+.pagina-tobey .timeline-section {
+    position: relative;
+
+    padding:
+        clamp(95px, 11vw, 155px)
+        clamp(24px, 8vw, 120px);
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(174, 10, 20, 0.09),
+            transparent 27%
+        ),
+        linear-gradient(
+            180deg,
+            #090909 0%,
+            #050505 100%
+        );
+}
+
+
+/* NÚMERO GIGANTE AO FUNDO */
+
+.pagina-tobey .timeline-section::before {
+    content: "03";
+
+    position: absolute;
+
+    z-index: -2;
+
+    top: 60px;
+    right: -25px;
+
+    color:
+        rgba(255, 255, 255, 0.018);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(13rem, 28vw, 30rem);
+
+    font-weight: 900;
+
+    line-height: 0.8;
+
+    pointer-events: none;
+}
+
+
+/* LINHA VERMELHA DECORATIVA */
+
+.pagina-tobey .timeline-section::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    top: 0;
+    left: 50%;
+
+    width: 1px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(190, 15, 27, 0.08),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   29. TÍTULO DA TIMELINE
+
+   reaproveita .titulo-secao da Parte 2
+========================================================= */
+
+.pagina-tobey .timeline-section .titulo-secao {
+    margin-bottom:
+        clamp(50px, 7vw, 80px);
+}
+
+
+/* =========================================================
+   30. CONTROLES DA TIMELINE
+
+   HTML:
+   .timeline-controles
+
+   button.timeline-btn
+   .timeline-linha
+========================================================= */
+
+.pagina-tobey .timeline-controles {
+    position: relative;
+
+    z-index: 5;
+
+    width:
+        min(1000px, 100%);
+
+    margin:
+        0 auto
+        clamp(55px, 7vw, 85px);
+
+    display: grid;
+
+    grid-template-columns:
+        auto 1fr auto 1fr auto;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   31. BOTÕES 2002 / 2004 / 2007
+========================================================= */
+
+.pagina-tobey .timeline-btn {
+    position: relative;
+
+    width: 155px;
+    min-height: 82px;
+
+    padding:
+        13px 17px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    background:
+        rgba(255, 255, 255, 0.018);
+
+    color: #777;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* PONTO DA TIMELINE */
+
+.pagina-tobey .timeline-btn::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -7px;
+
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid #252525;
+
+    background: #080808;
+
+    transform:
+        translateX(-50%);
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* ANO */
+
+.pagina-tobey .timeline-btn strong {
+    color: #aaa;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size: 1.55rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.05em;
+
+    line-height: 1;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+/* FASE */
+
+.pagina-tobey .timeline-btn span {
+    color: #555;
+
+    font-size: 0.48rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+/* HOVER */
+
+.pagina-tobey .timeline-btn:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(255, 255, 255, 0.22);
+
+    background:
+        rgba(255, 255, 255, 0.04);
+}
+
+
+.pagina-tobey .timeline-btn:hover strong {
+    color: #fff;
+}
+
+
+/* =========================================================
+   32. FILME ATIVO
+========================================================= */
+
+.pagina-tobey .timeline-btn.ativo {
+    border-color:
+        rgba(237, 28, 43, 0.55);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(190, 13, 25, 0.20),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    box-shadow:
+        0 18px 45px
+        rgba(0, 0, 0, 0.30);
+}
+
+
+.pagina-tobey .timeline-btn.ativo strong {
+    color:
+        var(--vermelho-claro);
+}
+
+
+.pagina-tobey .timeline-btn.ativo span {
+    color: #b4b4b4;
+}
+
+
+.pagina-tobey .timeline-btn.ativo::before {
+    border-color:
+        var(--vermelho-claro);
+
+    background:
+        var(--vermelho-claro);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(237, 28, 43, 0.10);
+}
+
+
+/* =========================================================
+   33. LINHAS ENTRE OS ANOS
+========================================================= */
+
+.pagina-tobey .timeline-linha {
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(237, 28, 43, 0.25),
+            rgba(255, 255, 255, 0.08)
+        );
+}
+
+
+/* =========================================================
+   34. PAINEL PRINCIPAL DA TIMELINE
+
+   HTML:
+   .timeline-conteudo
+
+       .timeline-imagem
+       .timeline-info
+========================================================= */
+
+.pagina-tobey .timeline-conteudo {
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(1180px, 100%);
+
+    margin:
+        0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.18fr)
+        minmax(330px, 0.82fr);
+
+    min-height: 540px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    background:
+        #090909;
+
+    box-shadow:
+        0 35px 100px
+        rgba(0, 0, 0, 0.40);
+}
+
+
+/* DETALHE VERMELHO SUPERIOR */
+
+.pagina-tobey .timeline-conteudo::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 10;
+
+    top: 0;
+    left: 0;
+
+    width: 110px;
+    height: 2px;
+
+    background:
+        var(--vermelho-claro);
+}
+
+
+/* =========================================================
+   35. IMAGEM DA TIMELINE
+
+   IMPORTANTE:
+   altura limitada de propósito.
+   Aqui não existe imagem com altura automática gigante.
+========================================================= */
+
+.pagina-tobey .timeline-imagem {
+    position: relative;
+
+    width: 100%;
+    height: 540px;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    background:
+        #0b0b0b;
+}
+
+
+/* VINHETA */
+
+.pagina-tobey .timeline-imagem::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 55%,
+            rgba(9, 9, 9, 0.15) 75%,
+            rgba(9, 9, 9, 0.65) 100%
+        ),
+
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.38),
+            transparent 42%
+        );
+}
+
+
+/* IMAGEM REAL */
+
+.pagina-tobey .timeline-imagem img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter:
+        saturate(0.86)
+        contrast(1.07)
+        brightness(0.87);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.65s ease,
+        filter 0.65s ease;
+}
+
+
+.pagina-tobey .timeline-conteudo:hover
+.timeline-imagem img {
+    transform:
+        scale(1.025);
+
+    filter:
+        saturate(0.95)
+        contrast(1.06)
+        brightness(0.92);
+}
+
+
+/* =========================================================
+   36. INFORMAÇÕES DO FILME
+========================================================= */
+
+.pagina-tobey .timeline-info {
+    position: relative;
+
+    min-width: 0;
+
+    padding:
+        clamp(42px, 5vw, 70px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0c0c0c,
+            #070707
+        );
+}
+
+
+/* NÚMERO DECORATIVO */
+
+.pagina-tobey .timeline-info::after {
+    content: "FILM";
+
+    position: absolute;
+
+    right: 18px;
+    bottom: 2px;
+
+    color:
+        rgba(255, 255, 255, 0.025);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(4.5rem, 8vw, 8rem);
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   37. ANO
+========================================================= */
+
+.pagina-tobey #timelineAno {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 18px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(1.8rem, 3vw, 2.7rem);
+
+    line-height: 1;
+
+    letter-spacing: 0.07em;
+}
+
+
+/* =========================================================
+   38. TÍTULO DO FILME
+========================================================= */
+
+.pagina-tobey #timelineTitulo {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: #f0eee9;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(2.6rem, 5vw, 5rem);
+
+    font-weight: 900;
+
+    line-height: 0.92;
+
+    letter-spacing: -0.02em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   39. SUBTÍTULO
+========================================================= */
+
+.pagina-tobey .timeline-subtitulo {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 18px;
+
+    color: #747474;
+
+    font-size: 0.58rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   40. TEXTO DO FILME
+========================================================= */
+
+.pagina-tobey #timelineTexto {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 470px;
+
+    margin-top: 28px;
+
+    color: #999;
+
+    font-size:
+        clamp(0.85rem, 1.2vw, 0.96rem);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   41. AMEAÇA PRINCIPAL
+========================================================= */
+
+.pagina-tobey .timeline-vilao {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 37px;
+
+    padding-top: 21px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+}
+
+
+.pagina-tobey .timeline-vilao small {
+    color: #555;
+
+    font-size: 0.49rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey #timelineVilao {
+    color: #dedbd5;
+
+    font-size: 0.78rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.11em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   42. EFEITO DE TROCA
+
+   Se o JS alterar opacity da imagem futuramente,
+   a transição já está preparada.
+========================================================= */
+
+.pagina-tobey #timelineImagem {
+    transition:
+        opacity 0.22s ease,
+        transform 0.55s ease,
+        filter 0.55s ease;
+}
+
+
+/* =========================================================
+   43. RESPONSIVO — TIMELINE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .pagina-tobey .timeline-conteudo {
+        grid-template-columns:
+            1.05fr 0.95fr;
+
+        min-height: 500px;
+    }
+
+
+    .pagina-tobey .timeline-imagem {
+        height: 500px;
+    }
+
+
+    .pagina-tobey .timeline-info {
+        padding: 40px;
+    }
+
+}
+
+
+@media (max-width: 820px) {
+
+    .pagina-tobey .timeline-section {
+        padding:
+            90px 22px;
+    }
+
+
+    .pagina-tobey .timeline-controles {
+        grid-template-columns:
+            1fr 32px 1fr 32px 1fr;
+
+        margin-bottom: 50px;
+    }
+
+
+    .pagina-tobey .timeline-btn {
+        width: 100%;
+
+        min-height: 75px;
+
+        padding:
+            10px 8px;
+    }
+
+
+    .pagina-tobey .timeline-btn strong {
+        font-size: 1.3rem;
+    }
+
+
+    .pagina-tobey .timeline-btn span {
+        font-size: 0.42rem;
+
+        letter-spacing: 0.08em;
+    }
+
+
+    .pagina-tobey .timeline-conteudo {
+        grid-template-columns:
+            1fr;
+
+        min-height: 0;
+    }
+
+
+    .pagina-tobey .timeline-imagem {
+        height:
+            clamp(350px, 72vw, 500px);
+    }
+
+
+    .pagina-tobey .timeline-imagem::after {
+        background:
+            linear-gradient(
+                to top,
+                rgba(9, 9, 9, 0.75),
+                transparent 45%
+            );
+    }
+
+
+    .pagina-tobey .timeline-info {
+        min-height: 430px;
+
+        padding:
+            45px 35px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .pagina-tobey .timeline-section {
+        padding:
+            80px 18px;
+    }
+
+
+    .pagina-tobey .timeline-controles {
+        grid-template-columns:
+            1fr;
+
+        gap: 9px;
+    }
+
+
+    .pagina-tobey .timeline-linha {
+        display: none;
+    }
+
+
+    .pagina-tobey .timeline-btn {
+        min-height: 60px;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        padding:
+            13px 17px;
+    }
+
+
+    .pagina-tobey .timeline-btn::before {
+        left: auto;
+        right: 15px;
+        bottom: -5px;
+
+        transform: none;
+
+        width: 8px;
+        height: 8px;
+    }
+
+
+    .pagina-tobey .timeline-btn strong {
+        font-size: 1.25rem;
+    }
+
+
+    .pagina-tobey .timeline-btn span {
+        text-align: right;
+    }
+
+
+    .pagina-tobey .timeline-imagem {
+        height: 330px;
+    }
+
+
+    .pagina-tobey .timeline-info {
+        min-height: 390px;
+
+        padding:
+            35px 25px;
+    }
+
+
+    .pagina-tobey #timelineTitulo {
+        font-size:
+            clamp(2.7rem, 14vw, 4rem);
+    }
+
+
+    .pagina-tobey #timelineTexto {
+        margin-top: 22px;
+    }
+
+
+    .pagina-tobey .timeline-vilao {
+        margin-top: 27px;
+    }
+
+}
+
+
+/* =========================================================
+   FIM — PARTE 3/6
+========================================================= */
+/* =========================================================
+   MIRANHA — TOBEY.CSS
+
+   PARTE 4/6
+   EVOLUÇÃO DOS TRAJES / WARDROBE ARCHIVE
+========================================================= */
+
+
+/* =========================================================
+   44. SEÇÃO DOS TRAJES
+========================================================= */
+
+.pagina-tobey .trajes-tobey-v2 {
+    position: relative;
+
+    padding:
+        clamp(100px, 11vw, 155px)
+        clamp(24px, 8vw, 120px);
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 50% 28%,
+            rgba(128, 8, 15, 0.10),
+            transparent 32%
+        ),
+        linear-gradient(
+            180deg,
+            #070707 0%,
+            #030303 100%
+        );
+}
+
+
+/* TEXTO GIGANTE AO FUNDO */
+
+.pagina-tobey .trajes-tobey-v2::before {
+    content: "WARDROBE";
+
+    position: absolute;
+
+    z-index: -2;
+
+    top: 80px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        rgba(255, 255, 255, 0.014);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(7rem, 15vw, 15rem);
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   45. CABEÇALHO
+========================================================= */
+
+.pagina-tobey .trajes-tobey-cabecalho {
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(1180px, 100%);
+
+    margin:
+        0 auto
+        clamp(55px, 7vw, 85px);
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+.pagina-tobey .trajes-tobey-cabecalho > div:first-child {
+    max-width: 720px;
+}
+
+
+.pagina-tobey .trajes-tobey-cabecalho > div:first-child > span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 17px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.56rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.22em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .trajes-tobey-cabecalho > div:first-child > span::before {
+    content: "";
+
+    width: 35px;
+    height: 1px;
+
+    background:
+        var(--vermelho-claro);
+}
+
+
+.pagina-tobey .trajes-tobey-cabecalho h2 {
+    margin: 0;
+
+    color: #f1eee8;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(3.7rem, 7vw, 7rem);
+
+    font-weight: 900;
+
+    line-height: 0.87;
+
+    letter-spacing: -0.035em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .trajes-tobey-cabecalho h2 strong {
+    display: block;
+
+    color:
+        var(--vermelho-claro);
+
+    font-weight: inherit;
+}
+
+
+.pagina-tobey .trajes-tobey-cabecalho p {
+    max-width: 470px;
+
+    margin-top: 24px;
+
+    color: #808080;
+
+    font-size: 0.87rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   46. STATUS — 04 ARQUIVOS
+========================================================= */
+
+.pagina-tobey .trajes-tobey-status {
+    padding:
+        12px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color: #777;
+
+    font-size: 0.53rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.17em;
+}
+
+
+.pagina-tobey .trajes-tobey-status > span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--vermelho-claro);
+
+    box-shadow:
+        0 0 12px
+        rgba(237, 28, 43, 0.55);
+}
+
+
+/* =========================================================
+   47. INTERFACE PRINCIPAL
+========================================================= */
+
+.pagina-tobey .trajes-tobey-interface {
+    position: relative;
+
+    width:
+        min(1180px, 100%);
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    background:
+        #050505;
+
+    box-shadow:
+        0 35px 100px
+        rgba(0, 0, 0, 0.42);
+
+    transition:
+        background 0.45s ease,
+        border-color 0.45s ease;
+}
+
+
+/* LINHA VERMELHA */
+
+.pagina-tobey .trajes-tobey-interface::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 20;
+
+    top: 0;
+    left: 0;
+
+    width: 130px;
+    height: 2px;
+
+    background:
+        var(--vermelho-claro);
+}
+
+
+/* =========================================================
+   48. BARRA SUPERIOR
+========================================================= */
+
+.pagina-tobey .trajes-tobey-topo {
+    position: relative;
+
+    z-index: 20;
+
+    min-height: 54px;
+
+    padding:
+        0 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    background:
+        #080808;
+}
+
+
+.pagina-tobey .trajes-tobey-topo span {
+    color: #555;
+
+    font-size: 0.49rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.18em;
+}
+
+
+.pagina-tobey #tobeyTrajeContador {
+    color:
+        var(--vermelho-claro);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size: 1rem;
+
+    letter-spacing: 0.09em;
+}
+
+
+/* =========================================================
+   49. ÁREA DO CARROSSEL
+
+   IMPORTANTE:
+   não usamos mais 650px gigantes.
+========================================================= */
+
+.pagina-tobey .trajes-tobey-carrossel-area {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        72px minmax(0, 1fr) 72px;
+
+    align-items: center;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    background:
+        #050505;
+}
+
+
+/* =========================================================
+   50. SETAS
+========================================================= */
+
+.pagina-tobey .tobey-traje-seta {
+    position: relative;
+
+    z-index: 30;
+
+    width: 44px;
+    height: 44px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.13);
+
+    border-radius: 50%;
+
+    background:
+        rgba(5, 5, 5, 0.78);
+
+    color: #aaa;
+
+    font-size: 1.15rem;
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.pagina-tobey .tobey-traje-seta:hover {
+    color: #fff;
+
+    border-color:
+        var(--vermelho-claro);
+
+    background:
+        var(--vermelho);
+
+    transform:
+        scale(1.07);
+}
+
+
+/* =========================================================
+   51. CARROSSEL
+========================================================= */
+
+.pagina-tobey #tobeyTrajesCarrossel,
+.pagina-tobey .trajes-tobey-carrossel {
+    position: relative;
+
+    width: 100%;
+    height: 500px;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    background:
+        #050505;
+}
+
+
+/* =========================================================
+   52. CARDS
+========================================================= */
+
+.pagina-tobey .tobey-traje-card {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    cursor: default;
+
+    border: 0;
+
+    background:
+        #050505;
+
+    color: #fff;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+        translateX(25px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.45s ease,
+        visibility 0.35s ease;
+}
+
+
+.pagina-tobey .tobey-traje-card.ativo {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateX(0);
+}
+
+
+/* =========================================================
+   53. FUNDO DO TRAJE
+
+   O palco inteiro fica escuro.
+   Os fundos individuais ajudam a integrar a imagem
+   ao fundo do carrossel.
+========================================================= */
+
+.pagina-tobey .tobey-traje-imagem {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    background:
+        #050505;
+}
+
+
+/* CAMADA ATRÁS DA IMAGEM */
+
+.pagina-tobey .tobey-traje-fundo {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* HUMAN SPIDER */
+
+.pagina-tobey .tobey-fundo-lutador {
+    background:
+        radial-gradient(
+            ellipse at 50% 55%,
+            #171717 0%,
+            #0d0d0d 35%,
+            #050505 72%
+        );
+}
+
+
+/* TRAJE CLÁSSICO */
+
+.pagina-tobey .tobey-fundo-classico {
+    background:
+        radial-gradient(
+            ellipse at 50% 50%,
+            #171416 0%,
+            #0b090a 40%,
+            #050505 75%
+        );
+}
+
+
+/* DANIFICADO */
+
+.pagina-tobey .tobey-fundo-danificado {
+    background:
+        radial-gradient(
+            ellipse at 50% 50%,
+            #151313 0%,
+            #0c0909 42%,
+            #050505 76%
+        );
+}
+
+
+/* PRETO */
+
+.pagina-tobey .tobey-fundo-preto {
+    background:
+        radial-gradient(
+            ellipse at 50% 48%,
+            #151515 0%,
+            #090909 42%,
+            #020202 78%
+        );
+}
+
+
+/* =========================================================
+   54. IMAGEM DO TRAJE
+
+   ESTA É A PARTE PRINCIPAL DA CORREÇÃO.
+
+   Em vez de width:100% / height:100%,
+   controlamos o tamanho real.
+========================================================= */
+
+.pagina-tobey .tobey-traje-imagem > img {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 50%;
+    bottom: 0;
+
+    transform:
+        translateX(-50%);
+
+    width: auto;
+
+    height:
+        min(88%, 430px);
+
+    max-width: 72%;
+
+    object-fit: contain;
+
+    object-position:
+        center bottom;
+
+    filter:
+        drop-shadow(
+            0 22px 28px
+            rgba(0, 0, 0, 0.55)
+        );
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+
+.pagina-tobey .tobey-traje-card.ativo
+.tobey-traje-imagem > img {
+    transform:
+        translateX(-50%)
+        scale(1);
+}
+
+
+.pagina-tobey .tobey-traje-card.ativo:hover
+.tobey-traje-imagem > img {
+    transform:
+        translateX(-50%)
+        scale(1.018);
+}
+
+
+/* =========================================================
+   55. MÁSCARA PARA ESCONDER A DIVISÃO DO FUNDO DA FOTO
+
+   Isso ajuda especialmente se a imagem não tiver
+   transparência perfeita.
+========================================================= */
+
+.pagina-tobey .tobey-traje-imagem::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 5;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to right,
+            #050505 0%,
+            transparent 18%,
+            transparent 82%,
+            #050505 100%
+        ),
+
+        linear-gradient(
+            to top,
+            rgba(5, 5, 5, 0.38) 0%,
+            transparent 22%,
+            transparent 82%,
+            rgba(5, 5, 5, 0.16) 100%
+        );
+}
+
+
+/* =========================================================
+   56. NÚMERO GIGANTE
+========================================================= */
+
+.pagina-tobey .tobey-traje-numero {
+    position: absolute;
+
+    z-index: 1;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -52%);
+
+    color:
+        rgba(255, 255, 255, 0.035);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(15rem, 28vw, 25rem);
+
+    font-weight: 900;
+
+    line-height: 0.8;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   57. PELÍCULA SOBRE O TRAJE
+========================================================= */
+
+.pagina-tobey .tobey-traje-pelicula {
+    position: absolute;
+
+    z-index: 6;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.24;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.018) 0px,
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+}
+
+
+/* =========================================================
+   58. INFORMAÇÃO DENTRO DO CARD
+========================================================= */
+
+.pagina-tobey .tobey-traje-card-info {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 27px;
+    bottom: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+
+.pagina-tobey .tobey-traje-card-info span {
+    margin-bottom: 7px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.48rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.18em;
+}
+
+
+.pagina-tobey .tobey-traje-card-info strong {
+    color: #eeeae4;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(1.5rem, 2.7vw, 2.35rem);
+
+    letter-spacing: 0.015em;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .tobey-traje-card-info small {
+    margin-top: 8px;
+
+    color: #666;
+
+    font-size: 0.48rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.17em;
+}
+
+
+/* =========================================================
+   59. INDICADORES
+========================================================= */
+
+.pagina-tobey .tobey-trajes-indicadores {
+    position: relative;
+
+    z-index: 20;
+
+    min-height: 48px;
+
+    padding:
+        0 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+
+    background:
+        #070707;
+}
+
+
+.pagina-tobey .tobey-traje-indicador {
+    width: 31px;
+    height: 3px;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    border: 0;
+
+    background:
+        #292929;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.pagina-tobey .tobey-traje-indicador:hover {
+    background:
+        #666;
+}
+
+
+.pagina-tobey .tobey-traje-indicador.ativo {
+    width: 53px;
+
+    background:
+        var(--vermelho-claro);
+}
+
+
+/* =========================================================
+   60. PAINEL DE DETALHES
+========================================================= */
+
+.pagina-tobey .tobey-traje-detalhes {
+    position: relative;
+
+    z-index: 10;
+
+    min-height: 230px;
+
+    padding:
+        clamp(32px, 4vw, 48px);
+
+    display: grid;
+
+    grid-template-columns:
+        0.7fr 1.7fr 1fr;
+
+    align-items: center;
+
+    gap:
+        clamp(30px, 5vw, 65px);
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b0b0b,
+            #060606
+        );
+}
+
+
+/* =========================================================
+   61. DETALHES — ESQUERDA
+========================================================= */
+
+.pagina-tobey .tobey-traje-detalhes-esquerda {
+    align-self: stretch;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+.pagina-tobey #tobeyTrajeCodigo {
+    color: #555;
+
+    font-size: 0.47rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.16em;
+}
+
+
+.pagina-tobey .tobey-traje-detalhes-numero {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 7px;
+}
+
+
+.pagina-tobey #tobeyTrajeNumero {
+    color:
+        var(--vermelho-claro);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(4rem, 7vw, 6.5rem);
+
+    line-height: 0.75;
+}
+
+
+.pagina-tobey .tobey-traje-detalhes-numero small {
+    padding-bottom: 3px;
+
+    color: #555;
+
+    font-size: 0.72rem;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   62. DETALHES — CENTRO
+========================================================= */
+
+.pagina-tobey .tobey-traje-detalhes-centro {
+    position: relative;
+}
+
+
+.pagina-tobey #tobeyTrajeStatus {
+    display: inline-block;
+
+    margin-bottom: 11px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.5rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.18em;
+}
+
+
+.pagina-tobey #tobeyTrajeTitulo {
+    margin: 0;
+
+    color: #efede8;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(2rem, 3.5vw, 3.4rem);
+
+    line-height: 0.95;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey #tobeyTrajeTexto {
+    max-width: 500px;
+
+    margin-top: 17px;
+
+    color: #888;
+
+    font-size: 0.8rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   63. DETALHES — DIREITA
+========================================================= */
+
+.pagina-tobey .tobey-traje-detalhes-direita {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.pagina-tobey .tobey-traje-detalhes-direita > div {
+    padding-bottom: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+}
+
+
+.pagina-tobey .tobey-traje-detalhes-direita span {
+    color: #4e4e4e;
+
+    font-size: 0.45rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.16em;
+}
+
+
+.pagina-tobey .tobey-traje-detalhes-direita strong {
+    color: #aaa;
+
+    font-size: 0.58rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.09em;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   64. RODAPÉ DO ARQUIVO
+========================================================= */
+
+.pagina-tobey .tobey-trajes-rodape {
+    min-height: 45px;
+
+    padding:
+        0 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    background:
+        #050505;
+}
+
+
+.pagina-tobey .tobey-trajes-rodape span {
+    color: #444;
+
+    font-size: 0.43rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.13em;
+}
+
+
+/* =========================================================
+   65. MODO TRAJE PRETO
+
+   O HTML já possui:
+   data-traje-atual="lutador"
+
+   Depois o JS poderá trocar para "preto".
+========================================================= */
+
+.pagina-tobey
+.trajes-tobey-interface[data-traje-atual="preto"] {
+    border-color:
+        rgba(255, 255, 255, 0.16);
+
+    background:
+        #020202;
+}
+
+
+.pagina-tobey
+.trajes-tobey-interface[data-traje-atual="preto"]
+.trajes-tobey-topo {
+    background:
+        #030303;
+}
+
+
+.pagina-tobey
+.trajes-tobey-interface[data-traje-atual="preto"]
+#tobeyTrajeContador {
+    color: #d6d6d6;
+}
+
+
+.pagina-tobey
+.trajes-tobey-interface[data-traje-atual="preto"]
+.tobey-traje-indicador.ativo {
+    background: #d4d4d4;
+}
+
+
+.pagina-tobey
+.trajes-tobey-interface[data-traje-atual="preto"]
+#tobeyTrajeNumero,
+.pagina-tobey
+.trajes-tobey-interface[data-traje-atual="preto"]
+#tobeyTrajeStatus {
+    color: #d7d7d7;
+}
+
+
+/* =========================================================
+   66. RUÍDO DO SIMBIONTE
+========================================================= */
+
+.pagina-tobey .tobey-simbionte-ruido-card {
+    position: absolute;
+
+    z-index: 7;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.16;
+
+    background:
+        repeating-linear-gradient(
+            115deg,
+            transparent 0,
+            transparent 13px,
+            rgba(255, 255, 255, 0.025) 14px,
+            transparent 15px
+        );
+}
+
+
+/* =========================================================
+   67. RESPONSIVO
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .pagina-tobey .trajes-tobey-cabecalho {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .pagina-tobey .trajes-tobey-carrossel-area {
+        grid-template-columns:
+            58px minmax(0, 1fr) 58px;
+
+        min-height: 460px;
+    }
+
+
+    .pagina-tobey #tobeyTrajesCarrossel,
+    .pagina-tobey .trajes-tobey-carrossel {
+        height: 460px;
+    }
+
+
+    .pagina-tobey .tobey-traje-imagem > img {
+        height:
+            min(85%, 390px);
+
+        max-width: 78%;
+    }
+
+
+    .pagina-tobey .tobey-traje-detalhes {
+        grid-template-columns:
+            0.7fr 1.6fr;
+
+        gap: 35px;
+    }
+
+
+    .pagina-tobey .tobey-traje-detalhes-direita {
+        grid-column:
+            1 / -1;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   68. MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .pagina-tobey .trajes-tobey-v2 {
+        padding:
+            80px 18px;
+    }
+
+
+    .pagina-tobey .trajes-tobey-cabecalho {
+        margin-bottom: 45px;
+    }
+
+
+    .pagina-tobey .trajes-tobey-cabecalho h2 {
+        font-size:
+            clamp(3.3rem, 16vw, 5rem);
+    }
+
+
+    .pagina-tobey .trajes-tobey-carrossel-area {
+        display: block;
+
+        min-height: 430px;
+    }
+
+
+    .pagina-tobey #tobeyTrajesCarrossel,
+    .pagina-tobey .trajes-tobey-carrossel {
+        height: 430px;
+    }
+
+
+    /* SETAS FLUTUAM NAS LATERAIS */
+
+    .pagina-tobey .tobey-traje-seta {
+        position: absolute;
+
+        z-index: 40;
+
+        top: 50%;
+
+        width: 39px;
+        height: 39px;
+
+        transform:
+            translateY(-50%);
+
+        background:
+            rgba(5, 5, 5, 0.82);
+    }
+
+
+    .pagina-tobey .tobey-traje-seta:hover {
+        transform:
+            translateY(-50%)
+            scale(1.05);
+    }
+
+
+    .pagina-tobey .tobey-traje-anterior {
+        left: 10px;
+    }
+
+
+    .pagina-tobey .tobey-traje-proximo {
+        right: 10px;
+    }
+
+
+    .pagina-tobey .tobey-traje-imagem > img {
+        height:
+            min(81%, 350px);
+
+        max-width: 82%;
+    }
+
+
+    .pagina-tobey .tobey-traje-numero {
+        font-size:
+            clamp(12rem, 52vw, 18rem);
+    }
+
+
+    .pagina-tobey .tobey-traje-card-info {
+        left: 17px;
+        bottom: 17px;
+    }
+
+
+    .pagina-tobey .tobey-traje-card-info strong {
+        font-size: 1.45rem;
+    }
+
+
+    .pagina-tobey .tobey-traje-detalhes {
+        grid-template-columns:
+            1fr;
+
+        gap: 32px;
+
+        padding:
+            32px 24px;
+    }
+
+
+    .pagina-tobey .tobey-traje-detalhes-esquerda {
+        min-height: 100px;
+    }
+
+
+    .pagina-tobey .tobey-traje-detalhes-direita {
+        grid-column: auto;
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey .tobey-trajes-rodape {
+        min-height: 60px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        padding:
+            12px 15px;
+    }
+
+}
+
+
+/* =========================================================
+   69. TELAS PEQUENAS
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .pagina-tobey #tobeyTrajesCarrossel,
+    .pagina-tobey .trajes-tobey-carrossel,
+    .pagina-tobey .trajes-tobey-carrossel-area {
+        height: 390px;
+        min-height: 390px;
+    }
+
+
+    .pagina-tobey .tobey-traje-imagem > img {
+        height:
+            min(79%, 315px);
+
+        max-width: 84%;
+    }
+
+
+    .pagina-tobey .tobey-traje-card-info span,
+    .pagina-tobey .tobey-traje-card-info small {
+        display: none;
+    }
+
+
+    .pagina-tobey .tobey-trajes-indicadores {
+        min-height: 44px;
+    }
+
+}
+
+
+/* =========================================================
+   FIM — PARTE 4/6
+========================================================= */
+/* =========================================================
+   MIRANHA — TOBEY.CSS
+
+   PARTE 5/6
+   VIDA DUPLA + FRAME EXTRA + VILÕES + CURIOSIDADES
+========================================================= */
+
+
+/* =========================================================
+   70. VIDA DUPLA
+========================================================= */
+
+.pagina-tobey .vida-aranha {
+    position: relative;
+
+    min-height: 720px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(400px, 0.92fr);
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        #070707;
+}
+
+
+/* =========================================================
+   71. IMAGEM — VIDA DUPLA
+========================================================= */
+
+.pagina-tobey .vida-imagem {
+    position: relative;
+
+    min-width: 0;
+    min-height: 720px;
+
+    overflow: hidden;
+
+    background:
+        #090909;
+}
+
+
+.pagina-tobey .vida-imagem::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 50%,
+            rgba(7, 7, 7, 0.25) 72%,
+            #070707 100%
+        ),
+
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.52),
+            transparent 45%
+        );
+}
+
+
+.pagina-tobey .vida-imagem img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 720px;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter:
+        saturate(0.82)
+        contrast(1.07)
+        brightness(0.85);
+
+    transition:
+        transform 0.8s ease,
+        filter 0.8s ease;
+}
+
+
+.pagina-tobey .vida-aranha:hover
+.vida-imagem img {
+    transform:
+        scale(1.025);
+
+    filter:
+        saturate(0.94)
+        contrast(1.06)
+        brightness(0.9);
+}
+
+
+/* FRAME 024 */
+
+.pagina-tobey .vida-frame {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 25px;
+    bottom: 23px;
+
+    padding:
+        8px 11px;
+
+    border-left:
+        2px solid
+        var(--vermelho-claro);
+
+    background:
+        rgba(0, 0, 0, 0.58);
+
+    color: #aaa;
+
+    font-size: 0.48rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.17em;
+
+    backdrop-filter:
+        blur(5px);
+}
+
+
+/* =========================================================
+   72. CONTEÚDO — VIDA DUPLA
+========================================================= */
+
+.pagina-tobey .vida-conteudo {
+    position: relative;
+
+    padding:
+        clamp(70px, 8vw, 120px)
+        clamp(45px, 7vw, 100px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 100% 50%,
+            rgba(150, 7, 17, 0.08),
+            transparent 45%
+        ),
+        #070707;
+}
+
+
+/* NÚMERO AO FUNDO */
+
+.pagina-tobey .vida-conteudo::before {
+    content: "02";
+
+    position: absolute;
+
+    right: -10px;
+    top: 55px;
+
+    color:
+        rgba(255, 255, 255, 0.025);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(10rem, 18vw, 18rem);
+
+    line-height: 0.8;
+
+    pointer-events: none;
+}
+
+
+.pagina-tobey .vida-conteudo > p:first-child {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 19px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.53rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .vida-conteudo h2 {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 600px;
+
+    margin: 0;
+
+    color: #efede8;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(3.5rem, 6vw, 6.3rem);
+
+    font-weight: 900;
+
+    line-height: 0.88;
+
+    letter-spacing: -0.035em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .vida-conteudo h2 span {
+    display: block;
+
+    color:
+        var(--vermelho-claro);
+}
+
+
+.pagina-tobey .vida-conteudo > p:not(:first-child) {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 500px;
+
+    margin-top: 29px;
+
+    color: #929292;
+
+    font-size: 0.88rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   73. DUAS IDENTIDADES
+========================================================= */
+
+.pagina-tobey .vida-identidades {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-left:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+}
+
+
+.pagina-tobey .vida-identidades > div {
+    position: relative;
+
+    min-height: 125px;
+
+    padding:
+        23px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    background:
+        rgba(255, 255, 255, 0.015);
+
+    transition:
+        background 0.3s ease;
+}
+
+
+.pagina-tobey .vida-identidades > div:hover {
+    background:
+        rgba(255, 255, 255, 0.04);
+}
+
+
+.pagina-tobey .vida-identidades span {
+    position: absolute;
+
+    top: 15px;
+    right: 17px;
+
+    color:
+        rgba(255, 255, 255, 0.09);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size: 2.8rem;
+
+    line-height: 1;
+}
+
+
+.pagina-tobey .vida-identidades strong {
+    color: #e1ded8;
+
+    font-size: 0.74rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+}
+
+
+.pagina-tobey .vida-identidades small {
+    margin-top: 6px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.44rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* =========================================================
+   74. FRAME EXTRA / RESPIRO VISUAL
+========================================================= */
+
+.pagina-tobey .tobey-respiro-visual {
+    position: relative;
+
+    min-height:
+        clamp(500px, 60vw, 700px);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(350px, 0.85fr)
+        minmax(0, 1.15fr);
+
+    overflow: hidden;
+
+    background:
+        #050505;
+}
+
+
+/* =========================================================
+   75. TEXTO DO FRAME
+========================================================= */
+
+.pagina-tobey .tobey-respiro-texto {
+    position: relative;
+
+    z-index: 4;
+
+    padding:
+        clamp(60px, 8vw, 110px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 100% 50%,
+            rgba(154, 8, 18, 0.11),
+            transparent 45%
+        ),
+        #070707;
+}
+
+
+.pagina-tobey .tobey-respiro-texto > span {
+    margin-bottom: 11px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.49rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.19em;
+}
+
+
+.pagina-tobey .tobey-respiro-texto > small {
+    color: #555;
+
+    font-size: 0.48rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.14em;
+}
+
+
+.pagina-tobey .tobey-respiro-texto h2 {
+    max-width: 550px;
+
+    margin-top: 28px;
+
+    color: #eeeae4;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(3.4rem, 6vw, 6rem);
+
+    font-weight: 900;
+
+    line-height: 0.88;
+
+    letter-spacing: -0.035em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .tobey-respiro-texto h2 strong {
+    display: block;
+
+    color:
+        var(--vermelho-claro);
+
+    font-weight: inherit;
+}
+
+
+/* =========================================================
+   76. IMAGEM DO FRAME
+========================================================= */
+
+.pagina-tobey .tobey-respiro-imagem {
+    position: relative;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    background:
+        #090909;
+}
+
+
+.pagina-tobey .tobey-respiro-imagem::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 3;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #070707 0%,
+            rgba(7, 7, 7, 0.4) 17%,
+            transparent 42%
+        ),
+
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.4),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+
+.pagina-tobey .tobey-respiro-imagem img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 500px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter:
+        saturate(0.8)
+        contrast(1.08)
+        brightness(0.84);
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+.pagina-tobey .tobey-respiro-visual:hover
+.tobey-respiro-imagem img {
+    transform:
+        scale(1.025);
+}
+
+
+/* =========================================================
+   77. SEÇÃO DOS VILÕES
+========================================================= */
+
+.pagina-tobey .viloes-tobey-section {
+    position: relative;
+
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(155, 8, 18, 0.08),
+            transparent 35%
+        ),
+        #050505;
+}
+
+
+/* TEXTO GIGANTE */
+
+.pagina-tobey .viloes-tobey-section::after {
+    content: "ENEMIES";
+
+    position: absolute;
+
+    z-index: -1;
+
+    right: -25px;
+    top: 90px;
+
+    color:
+        rgba(255, 255, 255, 0.014);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(8rem, 18vw, 18rem);
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   78. GRID DOS VILÕES
+========================================================= */
+
+.pagina-tobey .viloes-tobey {
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(1180px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    grid-auto-rows:
+        330px;
+
+    gap: 12px;
+}
+
+
+/*
+   Temos 5 vilões no HTML.
+
+   Os dois primeiros ficam maiores.
+*/
+
+.pagina-tobey .vilao-tobey-card:nth-child(1),
+.pagina-tobey .vilao-tobey-card:nth-child(2) {
+    grid-column:
+        span 3;
+}
+
+
+.pagina-tobey .vilao-tobey-card:nth-child(3),
+.pagina-tobey .vilao-tobey-card:nth-child(4),
+.pagina-tobey .vilao-tobey-card:nth-child(5) {
+    grid-column:
+        span 2;
+}
+
+
+/* =========================================================
+   79. CARD DO VILÃO
+========================================================= */
+
+.pagina-tobey .vilao-tobey-card {
+    position: relative;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    background:
+        #090909;
+
+    color: #fff;
+
+    isolation: isolate;
+}
+
+
+.pagina-tobey .vilao-tobey-card::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 7;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background:
+        var(--vermelho-claro);
+
+    transition:
+        width 0.45s ease;
+}
+
+
+.pagina-tobey .vilao-tobey-card:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   80. IMAGEM DO VILÃO
+========================================================= */
+
+.pagina-tobey .vilao-tobey-card > img {
+    position: absolute;
+
+    z-index: -3;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter:
+        saturate(0.62)
+        contrast(1.08)
+        brightness(0.66);
+
+    transition:
+        transform 0.65s ease,
+        filter 0.65s ease;
+}
+
+
+.pagina-tobey .vilao-tobey-card:hover > img {
+    transform:
+        scale(1.055);
+
+    filter:
+        saturate(0.9)
+        contrast(1.08)
+        brightness(0.76);
+}
+
+
+/* OVERLAY QUE JÁ EXISTE NO HTML */
+
+.pagina-tobey .vilao-card-overlay {
+    position: absolute;
+
+    z-index: -2;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.96) 0%,
+            rgba(0, 0, 0, 0.52) 43%,
+            rgba(0, 0, 0, 0.12) 75%,
+            rgba(0, 0, 0, 0.22) 100%
+        );
+}
+
+
+/* =========================================================
+   81. TEXTO DOS VILÕES
+========================================================= */
+
+.pagina-tobey .vilao-tobey-card > div:last-child {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding:
+        28px;
+}
+
+
+.pagina-tobey .vilao-tobey-card > div:last-child > span {
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.46rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.16em;
+}
+
+
+.pagina-tobey .vilao-tobey-card h3 {
+    margin:
+        9px 0 5px;
+
+    color: #fff;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(1.8rem, 3vw, 3rem);
+
+    font-weight: 900;
+
+    line-height: 0.95;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .vilao-tobey-card p {
+    color: #888;
+
+    font-size: 0.7rem;
+}
+
+
+.pagina-tobey .ver-vilao {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: #777;
+
+    font-size: 0.47rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.14em;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.pagina-tobey .vilao-tobey-card:hover
+.ver-vilao {
+    color: #fff;
+
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================================
+   82. CURIOSIDADES
+========================================================= */
+
+.pagina-tobey .curiosidades-cinema {
+    position: relative;
+
+    isolation: isolate;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0a0a0a,
+            #070707
+        );
+}
+
+
+.pagina-tobey .curiosidades-cinema::after {
+    content: "ARCHIVE";
+
+    position: absolute;
+
+    z-index: -1;
+
+    left: -20px;
+    bottom: 30px;
+
+    color:
+        rgba(255, 255, 255, 0.015);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(8rem, 18vw, 19rem);
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   83. GRID DAS CURIOSIDADES
+========================================================= */
+
+.pagina-tobey .curiosidades-tobey {
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(1180px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-left:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+}
+
+
+.pagina-tobey .curiosidades-tobey > div {
+    position: relative;
+
+    min-height: 300px;
+
+    padding:
+        32px 27px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    background:
+        rgba(255, 255, 255, 0.012);
+
+    overflow: hidden;
+
+    transition:
+        background 0.35s ease;
+}
+
+
+.pagina-tobey .curiosidades-tobey > div::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 2px;
+    height: 0;
+
+    background:
+        var(--vermelho-claro);
+
+    transition:
+        height 0.35s ease;
+}
+
+
+.pagina-tobey .curiosidades-tobey > div:hover {
+    background:
+        rgba(255, 255, 255, 0.035);
+}
+
+
+.pagina-tobey .curiosidades-tobey > div:hover::before {
+    height: 100%;
+}
+
+
+/* NÚMERO */
+
+.pagina-tobey .curiosidades-tobey strong {
+    position: absolute;
+
+    top: 22px;
+    right: 23px;
+
+    color:
+        rgba(255, 255, 255, 0.075);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size: 4.2rem;
+
+    line-height: 1;
+
+    transition:
+        color 0.35s ease;
+}
+
+
+.pagina-tobey .curiosidades-tobey > div:hover strong {
+    color:
+        rgba(237, 28, 43, 0.20);
+}
+
+
+/* CATEGORIA */
+
+.pagina-tobey .curiosidades-tobey span {
+    margin-bottom: 13px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.55rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* TEXTO */
+
+.pagina-tobey .curiosidades-tobey p {
+    max-width: 240px;
+
+    color: #858585;
+
+    font-size: 0.78rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   84. RESPONSIVO — PARTE 5
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .pagina-tobey .vida-aranha {
+        grid-template-columns:
+            1fr 1fr;
+
+        min-height: 650px;
+    }
+
+
+    .pagina-tobey .vida-imagem,
+    .pagina-tobey .vida-imagem img {
+        min-height: 650px;
+    }
+
+
+    .pagina-tobey .vida-conteudo {
+        padding:
+            60px 45px;
+    }
+
+
+    .pagina-tobey .tobey-respiro-visual {
+        grid-template-columns:
+            0.9fr 1.1fr;
+    }
+
+
+    .pagina-tobey .tobey-respiro-texto {
+        padding:
+            60px 45px;
+    }
+
+
+    .pagina-tobey .viloes-tobey {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        grid-auto-rows:
+            340px;
+    }
+
+
+    .pagina-tobey .vilao-tobey-card:nth-child(1),
+    .pagina-tobey .vilao-tobey-card:nth-child(2),
+    .pagina-tobey .vilao-tobey-card:nth-child(3),
+    .pagina-tobey .vilao-tobey-card:nth-child(4) {
+        grid-column:
+            span 1;
+    }
+
+
+    .pagina-tobey .vilao-tobey-card:nth-child(5) {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .pagina-tobey .curiosidades-tobey {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   85. TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .pagina-tobey .vida-aranha {
+        grid-template-columns:
+            1fr;
+
+        min-height: 0;
+    }
+
+
+    .pagina-tobey .vida-imagem {
+        min-height: 520px;
+    }
+
+
+    .pagina-tobey .vida-imagem img {
+        min-height: 520px;
+    }
+
+
+    .pagina-tobey .vida-imagem::after {
+        background:
+            linear-gradient(
+                to top,
+                #070707 0%,
+                rgba(7, 7, 7, 0.3) 35%,
+                transparent 70%
+            );
+    }
+
+
+    .pagina-tobey .vida-conteudo {
+        padding:
+            65px 25px 80px;
+    }
+
+
+    .pagina-tobey .tobey-respiro-visual {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey .tobey-respiro-texto {
+        min-height: 390px;
+
+        padding:
+            65px 25px;
+    }
+
+
+    .pagina-tobey .tobey-respiro-imagem {
+        min-height: 450px;
+    }
+
+
+    .pagina-tobey .tobey-respiro-imagem img {
+        min-height: 450px;
+    }
+
+
+    .pagina-tobey .tobey-respiro-imagem::before {
+        background:
+            linear-gradient(
+                to top,
+                #070707 0%,
+                rgba(7, 7, 7, 0.25) 35%,
+                transparent 70%
+            );
+    }
+
+
+    .pagina-tobey .viloes-tobey {
+        grid-template-columns:
+            1fr;
+
+        grid-auto-rows:
+            420px;
+    }
+
+
+    .pagina-tobey .vilao-tobey-card:nth-child(1),
+    .pagina-tobey .vilao-tobey-card:nth-child(2),
+    .pagina-tobey .vilao-tobey-card:nth-child(3),
+    .pagina-tobey .vilao-tobey-card:nth-child(4),
+    .pagina-tobey .vilao-tobey-card:nth-child(5) {
+        grid-column:
+            span 1;
+    }
+
+}
+
+
+/* =========================================================
+   86. MOBILE PEQUENO
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .pagina-tobey .vida-imagem,
+    .pagina-tobey .vida-imagem img {
+        min-height: 440px;
+    }
+
+
+    .pagina-tobey .vida-identidades {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey .vida-identidades > div {
+        min-height: 105px;
+    }
+
+
+    .pagina-tobey .tobey-respiro-imagem,
+    .pagina-tobey .tobey-respiro-imagem img {
+        min-height: 390px;
+    }
+
+
+    .pagina-tobey .viloes-tobey {
+        grid-auto-rows:
+            370px;
+    }
+
+
+    .pagina-tobey .vilao-tobey-card > div:last-child {
+        padding:
+            23px 20px;
+    }
+
+
+    .pagina-tobey .curiosidades-tobey {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey .curiosidades-tobey > div {
+        min-height: 220px;
+    }
+
+}
+
+
+/* =========================================================
+   FIM — PARTE 5/6
+========================================================= */
+
+/* =========================================================
+   MIRANHA — TOBEY.CSS
+
+   PARTE 6/6
+   SIMBIONTE + FINAL + UNIVERSOS + FOOTER + ACABAMENTO
+========================================================= */
+
+
+/* =========================================================
+   87. CAPÍTULOS CINEMATOGRÁFICOS
+========================================================= */
+
+.pagina-tobey .tobey-capitulo {
+    position: relative;
+
+    min-height: 230px;
+
+    padding:
+        55px
+        clamp(24px, 8vw, 120px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    background:
+        #080808;
+}
+
+
+.pagina-tobey .tobey-capitulo::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background:
+        var(--vermelho-claro);
+}
+
+
+.pagina-tobey .tobey-capitulo::after {
+    content: "MIRANHA PICTURES";
+
+    position: absolute;
+
+    right: 7%;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        rgba(255, 255, 255, 0.025);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(4rem, 8vw, 8rem);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+
+.pagina-tobey .tobey-capitulo > span {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 9px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.52rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.22em;
+}
+
+
+.pagina-tobey .tobey-capitulo > strong {
+    position: relative;
+
+    z-index: 2;
+
+    color: #eeeae4;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(3.4rem, 7vw, 7rem);
+
+    font-weight: 900;
+
+    line-height: 0.88;
+
+    letter-spacing: -0.03em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .tobey-capitulo > small {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 10px;
+
+    color: #555;
+
+    font-size: 0.48rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.19em;
+}
+
+
+/* CAPÍTULO VERMELHO */
+
+.pagina-tobey .tobey-capitulo-vermelho {
+    background:
+        linear-gradient(
+            105deg,
+            #100506,
+            #080808 60%
+        );
+}
+
+
+/* =========================================================
+   88. CAPÍTULO III — LADO SOMBRIO
+========================================================= */
+
+.pagina-tobey .tobey-capitulo-negro {
+    background:
+        radial-gradient(
+            circle at 25% 50%,
+            rgba(255, 255, 255, 0.035),
+            transparent 32%
+        ),
+        #030303;
+}
+
+
+.pagina-tobey .tobey-capitulo-negro::before {
+    background:
+        #bcbcbc;
+}
+
+
+.pagina-tobey .tobey-capitulo-negro > span {
+    color: #999;
+}
+
+
+.pagina-tobey .tobey-capitulo-negro > strong {
+    color: #d7d7d7;
+}
+
+
+/* =========================================================
+   89. SEÇÃO TRAJE NEGRO
+========================================================= */
+
+.pagina-tobey .traje-negro-v3 {
+    position: relative;
+
+    min-height:
+        clamp(720px, 80vw, 900px);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(390px, 0.9fr)
+        minmax(0, 1.1fr);
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 25% 45%,
+            rgba(255, 255, 255, 0.035),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(110, 110, 110, 0.04),
+            transparent 35%
+        ),
+        #020202;
+}
+
+
+/* VINHETA GERAL */
+
+.pagina-tobey .traje-negro-v3::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 8;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    box-shadow:
+        inset 0 0 180px
+        rgba(0, 0, 0, 0.92);
+}
+
+
+/* =========================================================
+   90. RUÍDO DO SIMBIONTE
+========================================================= */
+
+.pagina-tobey .simbionte-ruido {
+    position: absolute;
+
+    z-index: 7;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.17;
+
+    background:
+        repeating-linear-gradient(
+            112deg,
+            transparent 0,
+            transparent 17px,
+            rgba(255, 255, 255, 0.017) 18px,
+            transparent 19px
+        ),
+
+        repeating-linear-gradient(
+            4deg,
+            transparent 0,
+            transparent 5px,
+            rgba(255, 255, 255, 0.012) 6px,
+            transparent 7px
+        );
+}
+
+
+/* =========================================================
+   91. CONTEÚDO DO SIMBIONTE
+========================================================= */
+
+.pagina-tobey .traje-negro-conteudo {
+    position: relative;
+
+    z-index: 12;
+
+    padding:
+        clamp(80px, 9vw, 130px)
+        clamp(45px, 8vw, 115px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.pagina-tobey .traje-negro-conteudo > p:first-child {
+    margin-bottom: 18px;
+
+    color: #707070;
+
+    font-size: 0.5rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.19em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .simbionte-codigo {
+    width: fit-content;
+
+    margin-bottom: 21px;
+
+    padding:
+        7px 10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.11);
+
+    color: #999;
+
+    font-size: 0.46rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.16em;
+}
+
+
+.pagina-tobey .traje-negro-conteudo h2 {
+    margin: 0;
+
+    color: #e4e4e4;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(4rem, 7.5vw, 7.5rem);
+
+    font-weight: 900;
+
+    line-height: 0.86;
+
+    letter-spacing: -0.035em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .traje-negro-conteudo h2 span {
+    display: block;
+
+    color: #777;
+}
+
+
+.pagina-tobey .traje-negro-texto {
+    max-width: 530px;
+
+    margin-top: 30px;
+
+    color: #898989;
+
+    font-size: 0.88rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   92. DADOS DO SIMBIONTE
+========================================================= */
+
+.pagina-tobey .simbionte-dados {
+    width: 100%;
+    max-width: 570px;
+
+    margin-top: 42px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-left:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+}
+
+
+.pagina-tobey .simbionte-dados > div {
+    min-height: 100px;
+
+    padding:
+        20px 17px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    background:
+        rgba(255, 255, 255, 0.015);
+}
+
+
+.pagina-tobey .simbionte-dados span {
+    color: #555;
+
+    font-size: 0.43rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.14em;
+}
+
+
+.pagina-tobey .simbionte-dados strong {
+    margin-top: 7px;
+
+    color: #bbb;
+
+    font-size: 0.63rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.07em;
+}
+
+
+/* =========================================================
+   93. BOTÃO — ATIVAR SIMBIOSE
+========================================================= */
+
+.pagina-tobey .botao-simbionte {
+    width: fit-content;
+
+    min-width: 190px;
+
+    margin-top: 35px;
+
+    padding:
+        14px 20px;
+
+    cursor: pointer;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.25);
+
+    background:
+        transparent;
+
+    color: #aaa;
+
+    font-size: 0.53rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.17em;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.pagina-tobey .botao-simbionte:hover {
+    color: #050505;
+
+    background: #d2d2d2;
+
+    border-color: #d2d2d2;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   94. STATUS
+========================================================= */
+
+.pagina-tobey .simbionte-status {
+    margin-top: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #555;
+
+    font-size: 0.46rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.16em;
+}
+
+
+.pagina-tobey .simbionte-status > span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #555;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   95. IMAGEM DO TRAJE NEGRO
+========================================================= */
+
+.pagina-tobey .traje-negro-imagem {
+    position: relative;
+
+    z-index: 4;
+
+    min-width: 0;
+    min-height: 720px;
+
+    overflow: hidden;
+
+    background:
+        #020202;
+}
+
+
+.pagina-tobey .traje-negro-imagem > span {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 25px;
+    right: 25px;
+
+    padding:
+        8px 11px;
+
+    border-right:
+        2px solid #aaa;
+
+    background:
+        rgba(0, 0, 0, 0.62);
+
+    color: #777;
+
+    font-size: 0.45rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.16em;
+}
+
+
+.pagina-tobey .traje-negro-imagem img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 720px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter:
+        grayscale(0.35)
+        saturate(0.55)
+        contrast(1.12)
+        brightness(0.68);
+
+    transition:
+        transform 1s ease,
+        filter 0.7s ease;
+}
+
+
+/* JUNÇÃO IMAGEM/TEXTO */
+
+.pagina-tobey .simbionte-frame-overlay {
+    position: absolute;
+
+    z-index: 6;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #020202 0%,
+            rgba(2, 2, 2, 0.65) 15%,
+            transparent 45%
+        ),
+
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.65),
+            transparent 45%
+        );
+}
+
+
+/* =========================================================
+   96. MODO SIMBIOSE ATIVA
+
+   O JS depois só precisa colocar:
+   body.classList.add("simbionte-ativo")
+========================================================= */
+
+.pagina-tobey.simbionte-ativo
+.traje-negro-v3 {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255, 255, 255, 0.055),
+            transparent 32%
+        ),
+        #000;
+}
+
+
+.pagina-tobey.simbionte-ativo
+.traje-negro-imagem img {
+    transform:
+        scale(1.035);
+
+    filter:
+        grayscale(0.05)
+        saturate(0.72)
+        contrast(1.2)
+        brightness(0.76);
+}
+
+
+.pagina-tobey.simbionte-ativo
+.simbionte-ruido {
+    opacity: 0.34;
+}
+
+
+.pagina-tobey.simbionte-ativo
+.botao-simbionte {
+    color: #050505;
+
+    background: #ddd;
+
+    border-color: #ddd;
+}
+
+
+.pagina-tobey.simbionte-ativo
+.simbionte-status {
+    color: #bbb;
+}
+
+
+.pagina-tobey.simbionte-ativo
+.simbionte-status > span {
+    background: #ddd;
+
+    box-shadow:
+        0 0 14px
+        rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================================
+   97. ENCERRAMENTO CINEMATOGRÁFICO
+========================================================= */
+
+.pagina-tobey .tobey-encerramento {
+    position: relative;
+
+    min-height:
+        clamp(520px, 65vw, 720px);
+
+    padding:
+        80px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(155, 8, 18, 0.13),
+            transparent 27%
+        ),
+        #050505;
+}
+
+
+.pagina-tobey .tobey-encerramento::before {
+    content: "THE END";
+
+    position: absolute;
+
+    z-index: -1;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color:
+        rgba(255, 255, 255, 0.018);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(9rem, 23vw, 23rem);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+
+.pagina-tobey .tobey-encerramento > span {
+    margin-bottom: 20px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.52rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.24em;
+}
+
+
+.pagina-tobey .tobey-encerramento h2 {
+    max-width: 950px;
+
+    margin: 0;
+
+    color: #efede8;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(4rem, 8vw, 8rem);
+
+    font-weight: 900;
+
+    line-height: 0.88;
+
+    letter-spacing: -0.035em;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .tobey-encerramento h2 strong {
+    display: block;
+
+    color:
+        var(--vermelho-claro);
+
+    font-weight: inherit;
+}
+
+
+.pagina-tobey .tobey-encerramento > p {
+    margin-top: 27px;
+
+    color: #555;
+
+    font-size: 0.55rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.23em;
+}
+
+
+.pagina-tobey .tobey-encerramento-aranha {
+    margin-top: 45px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 2.3rem;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(237, 28, 43, 0.22)
+        );
+}
+
+
+/* =========================================================
+   98. OUTROS UNIVERSOS
+========================================================= */
+
+.pagina-tobey .trocar-aranha {
+    position: relative;
+
+    padding:
+        clamp(70px, 8vw, 105px)
+        clamp(24px, 8vw, 120px);
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    background:
+        #090909;
+}
+
+
+.pagina-tobey .trocar-aranha > p {
+    width:
+        min(1180px, 100%);
+
+    margin:
+        0 auto 30px;
+
+    color: #555;
+
+    font-size: 0.49rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.21em;
+}
+
+
+/* =========================================================
+   PRÓXIMAS EXIBIÇÕES — LAYOUT FINAL
+========================================================= */
+
+.pagina-tobey .trocar-aranha > div {
+    position: relative;
+    z-index: 2;
+
+    width: min(1600px, 100%);
+    margin: 45px auto 0;
+
+    display: flex;
+    align-items: center;
+
+    border: 0;
+}
+
+
+/* LINKS */
+
+.pagina-tobey .trocar-aranha a {
+    position: relative;
+
+    width: 50%;
+    min-height: auto;
+
+    padding: 20px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #f3f1ed;
+
+    font-family: Impact, "Arial Narrow", sans-serif;
+
+    font-size: clamp(2.8rem, 4.5vw, 5.2rem);
+    line-height: 0.95;
+
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* NÚMEROS 02 / 03 */
+
+.pagina-tobey .trocar-aranha a span {
+    flex: 0 0 auto;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.65rem;
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* HOVER LIMPO */
+
+.pagina-tobey .trocar-aranha a:hover {
+    color: #ffffff;
+    background: transparent;
+
+    padding-left: 35px;
+
+    transform: translateX(8px);
+}
+
+
+/* REMOVE A LINHA ANTIGA */
+
+.pagina-tobey .trocar-aranha a::before {
+    display: none;
+}
+
+
+/* NÃO MUDA O NÚMERO NO HOVER */
+
+.pagina-tobey .trocar-aranha a:hover span {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================================================
+   99. FOOTER
+========================================================= */
+
+.pagina-tobey .footer-tobey {
+    position: relative;
+
+    min-height: 390px;
+
+    padding:
+        75px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        #030303;
+}
+
+
+.pagina-tobey .footer-tobey > span {
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.47rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.23em;
+}
+
+
+.pagina-tobey .footer-tobey h2 {
+    margin:
+        14px 0 0;
+
+    color: #eee;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(4rem, 9vw, 8rem);
+
+    line-height: 0.9;
+
+    letter-spacing: 0.04em;
+}
+
+
+.pagina-tobey .footer-tobey > p {
+    max-width: 380px;
+
+    margin-top: 18px;
+
+    color: #555;
+
+    font-size: 0.75rem;
+
+    line-height: 1.65;
+}
+
+
+.pagina-tobey .footer-creditos {
+    margin:
+        30px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.pagina-tobey .footer-creditos span {
+    color: #444;
+
+    font-size: 0.44rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.18em;
+}
+
+
+.pagina-tobey .footer-tobey > a {
+    padding-bottom: 5px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    color: #888;
+
+    font-size: 0.52rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.15em;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.pagina-tobey .footer-tobey > a:hover {
+    color: #fff;
+
+    border-color:
+        var(--vermelho-claro);
+}
+
+
+/* =========================================================
+   100. EFEITOS GLOBAIS DO HTML
+
+   O HTML possui:
+   .tobey-grao
+   .tobey-vinheta
+========================================================= */
+
+.pagina-tobey .tobey-grao {
+    position: fixed;
+
+    z-index: 9990;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.055;
+
+    background-image:
+        repeating-radial-gradient(
+            circle at 0 0,
+            transparent 0,
+            rgba(255,255,255,.15) 1px,
+            transparent 2px
+        );
+
+    background-size:
+        5px 5px;
+}
+
+
+.pagina-tobey .tobey-vinheta {
+    position: fixed;
+
+    z-index: 9989;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    box-shadow:
+        inset 0 0 100px
+        rgba(0, 0, 0, 0.38);
+}
+
+
+/* =========================================================
+   101. SCROLLBAR
+========================================================= */
+
+.pagina-tobey::-webkit-scrollbar {
+    width: 9px;
+}
+
+
+.pagina-tobey::-webkit-scrollbar-track {
+    background: #030303;
+}
+
+
+.pagina-tobey::-webkit-scrollbar-thumb {
+    background: #282828;
+
+    border:
+        2px solid #030303;
+}
+
+
+.pagina-tobey::-webkit-scrollbar-thumb:hover {
+    background:
+        var(--vermelho);
+}
+
+
+/* =========================================================
+   102. FOCO DOS BOTÕES/LINKS
+========================================================= */
+
+.pagina-tobey button:focus-visible,
+.pagina-tobey a:focus-visible {
+    outline:
+        2px solid
+        var(--vermelho-claro);
+
+    outline-offset:
+        4px;
+}
+
+
+/* =========================================================
+   103. ANIMAÇÃO SUAVE DAS SEÇÕES
+
+   Mantemos visível por padrão.
+   Não depende do JavaScript para aparecer.
+========================================================= */
+
+.pagina-tobey .secao-animada {
+    opacity: 1;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   104. RESPONSIVO — SIMBIONTE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .pagina-tobey .traje-negro-v3 {
+        grid-template-columns:
+            1fr 1fr;
+
+        min-height: 680px;
+    }
+
+
+    .pagina-tobey .traje-negro-conteudo {
+        padding:
+            70px 45px;
+    }
+
+
+    .pagina-tobey .traje-negro-imagem,
+    .pagina-tobey .traje-negro-imagem img {
+        min-height: 680px;
+    }
+
+
+    .pagina-tobey .simbionte-dados {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey .simbionte-dados > div {
+        min-height: 75px;
+    }
+
+}
+
+
+/* =========================================================
+   105. MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .pagina-tobey .tobey-capitulo {
+        min-height: 185px;
+
+        padding:
+            45px 23px;
+    }
+
+
+    .pagina-tobey .tobey-capitulo::after {
+        display: none;
+    }
+
+
+    .pagina-tobey .traje-negro-v3 {
+        grid-template-columns:
+            1fr;
+
+        min-height: 0;
+    }
+
+
+    .pagina-tobey .traje-negro-conteudo {
+        padding:
+            75px 25px;
+    }
+
+
+    .pagina-tobey .traje-negro-imagem {
+        min-height: 570px;
+    }
+
+
+    .pagina-tobey .traje-negro-imagem img {
+        min-height: 570px;
+    }
+
+
+    .pagina-tobey .simbionte-frame-overlay {
+        background:
+            linear-gradient(
+                to top,
+                #020202 0%,
+                rgba(2, 2, 2, 0.3) 32%,
+                transparent 70%
+            );
+    }
+
+
+    .pagina-tobey .trocar-aranha > div {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey .trocar-aranha a {
+        min-height: 125px;
+    }
+
+}
+
+
+/* =========================================================
+   106. MOBILE PEQUENO
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .pagina-tobey .traje-negro-conteudo h2 {
+        font-size:
+            clamp(3.8rem, 18vw, 5.4rem);
+    }
+
+
+    .pagina-tobey .simbionte-dados {
+        margin-top: 32px;
+    }
+
+
+    .pagina-tobey .botao-simbionte {
+        width: 100%;
+    }
+
+
+    .pagina-tobey .traje-negro-imagem,
+    .pagina-tobey .traje-negro-imagem img {
+        min-height: 480px;
+    }
+
+
+    .pagina-tobey .tobey-encerramento {
+        min-height: 570px;
+
+        padding:
+            70px 20px;
+    }
+
+
+    .pagina-tobey .tobey-encerramento h2 {
+        font-size:
+            clamp(3.6rem, 17vw, 5.2rem);
+    }
+
+
+    .pagina-tobey .trocar-aranha {
+        padding:
+            65px 18px;
+    }
+
+
+    .pagina-tobey .trocar-aranha a {
+        padding:
+            25px 20px;
+
+        font-size: 1.65rem;
+    }
+
+
+    .pagina-tobey .footer-creditos {
+        gap: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   107. ACESSIBILIDADE — MENOS MOVIMENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pagina-tobey *,
+    .pagina-tobey *::before,
+    .pagina-tobey *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* =========================================================
+   FIM — PARTE 6/6
+
+   TOBEY.CSS FINALIZADO
+   PARTES 1 + 2 + 3 + 4 + 5 + 6
+========================================================= */
+
+/* =========================================================
+   MIRANHA — TOBEY
+   CORREÇÃO V3 HÍBRIDA
+
+   V1 + V2
+   ALTERA SOMENTE:
+   - HERO
+   - CAPÍTULO I
+   - HISTÓRIA
+   - TRANSFORMAÇÃO
+   - FRAME DO HERÓI
+   - PODERES
+
+   DA TRILOGIA PARA BAIXO NÃO MEXE.
+========================================================= */
+
+
+/* =========================================================
+   1. HERO — VOLTA DA IMAGEM + ESTILO CINEMATOGRÁFICO
+========================================================= */
+
+.pagina-tobey .hero-tobey {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        120px
+        clamp(30px, 8vw, 125px)
+        80px;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background: #050505;
+}
+
+
+/* FOTO PRINCIPAL DO HERO */
+
+.pagina-tobey .hero-tobey-fundo {
+    position: absolute;
+
+    z-index: -5;
+
+    inset: 0;
+
+    background-image:
+        url("img/tobey.jpg");
+
+    background-size:
+        cover;
+
+    background-position:
+        68% center;
+
+    background-repeat:
+        no-repeat;
+
+    transform:
+        scale(1.015);
+}
+
+
+/* DEGRADÊ PARA O TEXTO CONTINUAR LEGÍVEL */
+
+.pagina-tobey .hero-tobey-overlay {
+    position: absolute;
+
+    z-index: -4;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(3, 3, 3, 0.98) 0%,
+            rgba(3, 3, 3, 0.92) 25%,
+            rgba(3, 3, 3, 0.60) 47%,
+            rgba(3, 3, 3, 0.15) 72%,
+            rgba(3, 3, 3, 0.10) 100%
+        ),
+
+        linear-gradient(
+            0deg,
+            #050505 0%,
+            transparent 25%,
+            transparent 76%,
+            rgba(0, 0, 0, 0.35) 100%
+        );
+}
+
+
+/* GLOW VERMELHO MAIS DISCRETO */
+
+.pagina-tobey .hero-tobey::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: -3;
+
+    width: 650px;
+    height: 650px;
+
+    left: -300px;
+    top: 25%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(190, 10, 20, 0.15);
+
+    filter:
+        blur(120px);
+
+    pointer-events: none;
+}
+
+
+/* VINHETA */
+
+.pagina-tobey .hero-tobey::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: -2;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    box-shadow:
+        inset 0 0 150px
+        rgba(0, 0, 0, 0.75);
+}
+
+
+/* =========================================================
+   2. NÚMERO 01 DO HERO
+========================================================= */
+
+.pagina-tobey .hero-tobey-numero {
+    position: absolute;
+
+    z-index: -1;
+
+    right: 4%;
+    bottom: -20px;
+
+    color:
+        rgba(255, 255, 255, 0.055);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(15rem, 28vw, 30rem);
+
+    line-height: 0.75;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   3. CONTEÚDO DO HERO
+========================================================= */
+
+.pagina-tobey .hero-personagem-conteudo {
+    position: relative;
+
+    z-index: 5;
+
+    width:
+        min(720px, 100%);
+
+    margin: 0;
+
+    text-align: left;
+}
+
+
+/* MIRANHA PICTURES */
+
+.pagina-tobey .tobey-abertura {
+    margin-bottom: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    color: #777;
+
+    font-size: 0.5rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.23em;
+}
+
+
+.pagina-tobey .tobey-abertura::before {
+    content: "";
+
+    width: 40px;
+    height: 1px;
+
+    background:
+        var(--vermelho-claro);
+}
+
+
+/* UNIVERSO */
+
+.pagina-tobey .hero-tobey .universo {
+    margin-bottom: 13px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.58rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.21em;
+}
+
+
+/* =========================================================
+   4. TÍTULO DO HERO
+========================================================= */
+
+.pagina-tobey .hero-tobey h1 {
+    max-width: 760px;
+
+    margin: 0;
+
+    color: #f4f1eb;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(5.8rem, 10.2vw, 10.5rem);
+
+    font-weight: 900;
+
+    line-height: 0.76;
+
+    letter-spacing: -0.045em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.65);
+}
+
+
+.pagina-tobey .hero-tobey h1 span {
+    display: block;
+
+    color:
+        var(--vermelho-claro);
+}
+
+
+/* =========================================================
+   5. CRÉDITOS + FRASE
+========================================================= */
+
+.pagina-tobey .tobey-creditos-hero {
+    margin-top: 22px;
+
+    color: #777;
+
+    font-size: 0.48rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.16em;
+}
+
+
+.pagina-tobey .hero-tobey .frase-personagem {
+    max-width: 550px;
+
+    margin-top: 27px;
+
+    padding-left: 18px;
+
+    border-left:
+        2px solid
+        var(--vermelho-claro);
+
+    color: #b0b0b0;
+
+    font-size:
+        clamp(0.9rem, 1.2vw, 1.05rem);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   6. BOTÕES DO HERO
+========================================================= */
+
+.pagina-tobey .hero-tobey .hero-botoes {
+    margin-top: 34px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   7. INFORMAÇÕES DE FILME NO HERO
+========================================================= */
+
+.pagina-tobey .tobey-filme-info {
+    position: absolute;
+
+    z-index: 8;
+
+    right:
+        clamp(25px, 5vw, 75px);
+
+    bottom: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 0.45rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.17em;
+}
+
+
+/* =========================================================
+   8. CAPÍTULO I
+
+   VOLTA A QUEBRA CLARA DA V1
+========================================================= */
+
+.pagina-tobey .tobey-capitulo:not(
+    .tobey-capitulo-vermelho
+):not(
+    .tobey-capitulo-negro
+) {
+    min-height: 255px;
+
+    padding:
+        55px
+        clamp(30px, 8vw, 120px);
+
+    background:
+        #e8e5df;
+
+    border: 0;
+
+    color: #111;
+}
+
+
+/* BARRA VERMELHA */
+
+.pagina-tobey .tobey-capitulo:not(
+    .tobey-capitulo-vermelho
+):not(
+    .tobey-capitulo-negro
+)::before {
+    width: 5px;
+
+    background:
+        var(--vermelho);
+}
+
+
+/* TEXTO GIGANTE DE FUNDO */
+
+.pagina-tobey .tobey-capitulo:not(
+    .tobey-capitulo-vermelho
+):not(
+    .tobey-capitulo-negro
+)::after {
+    content: "PARKER";
+
+    right: 4%;
+
+    color:
+        rgba(0, 0, 0, 0.045);
+
+    font-size:
+        clamp(7rem, 15vw, 15rem);
+}
+
+
+/* CAPÍTULO I */
+
+.pagina-tobey .tobey-capitulo:not(
+    .tobey-capitulo-vermelho
+):not(
+    .tobey-capitulo-negro
+) > span {
+    color:
+        var(--vermelho);
+
+    font-size: 0.54rem;
+}
+
+
+/* PETER PARKER */
+
+.pagina-tobey .tobey-capitulo:not(
+    .tobey-capitulo-vermelho
+):not(
+    .tobey-capitulo-negro
+) > strong {
+    color: #111;
+
+    font-size:
+        clamp(4rem, 8vw, 8rem);
+}
+
+
+/* ANTES DA MÁSCARA */
+
+.pagina-tobey .tobey-capitulo:not(
+    .tobey-capitulo-vermelho
+):not(
+    .tobey-capitulo-negro
+) > small {
+    color: #777;
+}
+
+
+/* =========================================================
+   9. HISTÓRIA — MAIS COMPACTA
+========================================================= */
+
+.pagina-tobey #historia {
+    padding:
+        clamp(90px, 10vw, 135px)
+        clamp(30px, 8vw, 120px);
+
+    background:
+        #080808;
+}
+
+
+/* TIRA O PARKER ENORME QUE ESTAVA PESANDO */
+
+.pagina-tobey #historia::before {
+    opacity: 0.45;
+
+    font-size:
+        clamp(7rem, 15vw, 13rem);
+}
+
+
+/* =========================================================
+   10. TÍTULO DA HISTÓRIA
+========================================================= */
+
+.pagina-tobey #historia .titulo-secao {
+    width:
+        min(1180px, 100%);
+
+    margin:
+        0 auto
+        60px;
+}
+
+
+.pagina-tobey #historia .titulo-secao h2 {
+    max-width: 800px;
+
+    font-size:
+        clamp(4rem, 7vw, 7rem);
+
+    line-height: 0.87;
+}
+
+
+/* =========================================================
+   11. GRID DA HISTÓRIA
+========================================================= */
+
+.pagina-tobey #historia .historia-grid {
+    width:
+        min(1180px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(420px, 1.1fr);
+
+    align-items: center;
+
+    gap:
+        clamp(45px, 7vw, 90px);
+}
+
+
+/* =========================================================
+   12. TEXTO DA HISTÓRIA
+========================================================= */
+
+.pagina-tobey #historia .historia-texto {
+    max-width: 510px;
+}
+
+
+.pagina-tobey .tobey-numero-cena {
+    margin-bottom: 25px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.5rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.2em;
+}
+
+
+.pagina-tobey #historia .historia-texto p {
+    color: #999;
+
+    font-size: 0.88rem;
+
+    line-height: 1.85;
+}
+
+
+.pagina-tobey #historia .historia-texto p + p {
+    margin-top: 20px;
+}
+
+
+/* FRASE DE DESTAQUE */
+
+.pagina-tobey .tobey-frase-destaque {
+    margin-top: 35px;
+
+    padding:
+        20px 0 20px 20px;
+
+    border-left:
+        2px solid
+        var(--vermelho-claro);
+
+    color: #d5d2cd !important;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        1.05rem !important;
+
+    font-style: italic;
+
+    line-height: 1.7 !important;
+}
+
+
+/* =========================================================
+   13. FOTO DO PETER
+
+   Mantemos a foto real que já está no HTML.
+========================================================= */
+
+.pagina-tobey #historia .historia-imagem {
+    position: relative;
+
+    height:
+        clamp(470px, 50vw, 620px);
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    background:
+        #050505;
+}
+
+
+.pagina-tobey #historia .historia-imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter:
+        saturate(0.82)
+        contrast(1.06)
+        brightness(0.88);
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.pagina-tobey #historia .historia-imagem:hover img {
+    transform:
+        scale(1.025);
+}
+
+
+/* FRAME SUPERIOR */
+
+.pagina-tobey .frame-superior {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 17px;
+    left: 18px;
+
+    padding:
+        7px 10px;
+
+    background:
+        rgba(0, 0, 0, 0.62);
+
+    border-left:
+        2px solid
+        var(--vermelho-claro);
+
+    color: #aaa;
+
+    font-size: 0.45rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   14. FICHA HORIZONTAL
+
+   MAIS BAIXA E ELEGANTE
+========================================================= */
+
+.pagina-tobey #historia .ficha-horizontal {
+    width:
+        min(1180px, 100%);
+
+    margin:
+        55px auto 0;
+
+    min-height: 100px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    background:
+        #0b0b0b;
+}
+
+
+.pagina-tobey #historia .ficha-horizontal > div {
+    min-height: 100px;
+
+    padding:
+        20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.pagina-tobey #historia .ficha-horizontal > div:last-child {
+    border-right: 0;
+}
+
+
+/* =========================================================
+   15. TRANSFORMAÇÃO
+
+   REDUZ O ESPAÇO EXAGERADO
+========================================================= */
+
+.pagina-tobey .momento-aranha {
+    position: relative;
+
+    min-height:
+        clamp(520px, 65vw, 690px);
+
+    overflow: hidden;
+
+    background: #050505;
+}
+
+
+.pagina-tobey .momento-aranha > img {
+    width: 100%;
+    height: 100%;
+
+    min-height:
+        clamp(520px, 65vw, 690px);
+
+    object-fit: cover;
+
+    object-position: center 35%;
+
+    filter:
+        saturate(0.82)
+        contrast(1.06)
+        brightness(0.75);
+}
+
+
+.pagina-tobey .momento-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.90) 0%,
+            rgba(0, 0, 0, 0.62) 40%,
+            rgba(0, 0, 0, 0.12) 75%
+        ),
+
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.50),
+            transparent 50%
+        );
+}
+
+
+/* =========================================================
+   16. TEXTO DA TRANSFORMAÇÃO
+========================================================= */
+
+.pagina-tobey .momento-conteudo {
+    position: absolute;
+
+    z-index: 5;
+
+    left:
+        clamp(30px, 8vw, 120px);
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width:
+        min(560px, 80%);
+}
+
+
+.pagina-tobey .momento-codigo {
+    margin-bottom: 17px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-size: 0.49rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.19em;
+}
+
+
+.pagina-tobey .momento-conteudo h2 {
+    margin: 0;
+
+    color: #fff;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(4rem, 7vw, 7rem);
+
+    line-height: 0.88;
+
+    text-transform: uppercase;
+}
+
+
+.pagina-tobey .momento-texto {
+    max-width: 470px;
+
+    margin-top: 25px;
+
+    color: #aaa;
+
+    font-size: 0.86rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   17. FRAME DE AÇÃO
+
+   A IMAGEM DO HOMEM-ARANHA CONTINUA PROTAGONISTA.
+========================================================= */
+
+.pagina-tobey .tobey-frame-acao {
+    position: relative;
+
+    width: 100%;
+
+    min-height:
+        clamp(520px, 62vw, 700px);
+
+    overflow: hidden;
+
+    background:
+        #050505;
+}
+
+
+.pagina-tobey .tobey-frame-acao-imagem {
+    position: absolute;
+
+    inset: 0;
+}
+
+
+.pagina-tobey .tobey-frame-acao-imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center 35%;
+
+    filter:
+        saturate(0.85)
+        contrast(1.08)
+        brightness(0.78);
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+.pagina-tobey .tobey-frame-acao:hover
+.tobey-frame-acao-imagem img {
+    transform:
+        scale(1.025);
+}
+
+
+/* ESCURECIMENTO CINEMATOGRÁFICO */
+
+.pagina-tobey .tobey-frame-acao::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 2;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.70),
+            transparent 55%
+        );
+}
+
+
+/* INFORMAÇÕES DO FRAME */
+
+.pagina-tobey .tobey-frame-acao-info {
+    position: absolute;
+
+    z-index: 5;
+
+    left:
+        clamp(25px, 6vw, 90px);
+
+    right:
+        clamp(25px, 6vw, 90px);
+
+    bottom: 35px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   18. PODERES — MENOS GIGANTES
+========================================================= */
+
+.pagina-tobey .poderes-tobey-v2 {
+    padding:
+        clamp(90px, 10vw, 130px)
+        clamp(30px, 8vw, 120px);
+
+    background:
+        #070707;
+}
+
+
+/* TÍTULO */
+
+.pagina-tobey .poderes-tobey-v2 .titulo-secao {
+    width:
+        min(1180px, 100%);
+
+    margin:
+        0 auto
+        55px;
+}
+
+
+.pagina-tobey .poderes-tobey-v2
+.titulo-secao h2 {
+    font-size:
+        clamp(4rem, 7vw, 7rem);
+
+    line-height: 0.87;
+}
+
+
+/* =========================================================
+   19. GRID DOS PODERES
+========================================================= */
+
+.pagina-tobey .poderes-grid {
+    width:
+        min(1180px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   20. CARDS DOS PODERES
+
+   ANTES ESTAVAM GRANDES DEMAIS.
+========================================================= */
+
+.pagina-tobey .poder-card {
+    position: relative;
+
+    min-height: 210px;
+
+    padding:
+        27px 23px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    background:
+        #0c0c0c;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.pagina-tobey .poder-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(237, 28, 43, 0.42);
+
+    background:
+        #101010;
+}
+
+
+/* NÚMERO / ÍCONE */
+
+.pagina-tobey .poder-card > span:first-child {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    color:
+        rgba(255, 255, 255, 0.08);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size: 3.5rem;
+
+    line-height: 1;
+}
+
+
+/* TÍTULO */
+
+.pagina-tobey .poder-card h3 {
+    margin: 0;
+
+    color: #eeeae4;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(1.45rem, 2.3vw, 2rem);
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+
+/* TEXTO */
+
+.pagina-tobey .poder-card p {
+    margin-top: 9px;
+
+    color: #777;
+
+    font-size: 0.7rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   21. TEIA ORGÂNICA — DESTAQUE
+
+   CONTINUA MAIOR, MAS SEM VIRAR UM BLOCO GIGANTE.
+========================================================= */
+
+.pagina-tobey .poder-card.destaque-poder {
+    grid-column:
+        1 / -1;
+
+    min-height: 180px;
+
+    padding:
+        30px 35px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(155, 8, 18, 0.20),
+            #0b0b0b 55%
+        );
+
+    border-color:
+        rgba(237, 28, 43, 0.20);
+}
+
+
+.pagina-tobey .poder-card.destaque-poder::before {
+    content: "SPECIAL";
+
+    position: absolute;
+
+    right: 25px;
+    top: 20px;
+
+    color:
+        rgba(237, 28, 43, 0.13);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(3rem, 6vw, 6rem);
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   22. RESPONSIVO — V3
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .pagina-tobey .hero-tobey-fundo {
+        background-position:
+            62% center;
+    }
+
+
+    .pagina-tobey #historia .historia-grid {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 40px;
+    }
+
+
+    .pagina-tobey .poderes-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   23. TABLET
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .pagina-tobey .hero-tobey {
+        min-height: 850px;
+
+        align-items: flex-end;
+
+        padding:
+            120px 23px 100px;
+    }
+
+
+    .pagina-tobey .hero-tobey-fundo {
+        background-position:
+            64% center;
+    }
+
+
+    .pagina-tobey .hero-tobey-overlay {
+        background:
+            linear-gradient(
+                to top,
+                #050505 0%,
+                rgba(5, 5, 5, 0.88) 35%,
+                rgba(5, 5, 5, 0.25) 72%,
+                rgba(0, 0, 0, 0.25) 100%
+            );
+    }
+
+
+    .pagina-tobey .hero-tobey h1 {
+        font-size:
+            clamp(5rem, 18vw, 7rem);
+    }
+
+
+    .pagina-tobey .tobey-filme-info {
+        display: none;
+    }
+
+
+    .pagina-tobey #historia .historia-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey #historia .historia-texto {
+        max-width: none;
+    }
+
+
+    .pagina-tobey #historia .historia-imagem {
+        height: 540px;
+    }
+
+
+    .pagina-tobey #historia .ficha-horizontal {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .pagina-tobey .momento-conteudo {
+        left: 25px;
+
+        width:
+            calc(100% - 50px);
+    }
+
+
+    .pagina-tobey .poderes-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   24. MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .pagina-tobey .hero-tobey {
+        min-height: 780px;
+
+        padding:
+            110px 19px 80px;
+    }
+
+
+    .pagina-tobey .hero-tobey-fundo {
+        background-position:
+            60% center;
+    }
+
+
+    .pagina-tobey .hero-tobey h1 {
+        font-size:
+            clamp(4.4rem, 20vw, 6rem);
+    }
+
+
+    .pagina-tobey .hero-tobey
+    .frase-personagem {
+        font-size: 0.83rem;
+    }
+
+
+    .pagina-tobey .tobey-capitulo:not(
+        .tobey-capitulo-vermelho
+    ):not(
+        .tobey-capitulo-negro
+    ) {
+        min-height: 200px;
+
+        padding:
+            45px 20px;
+    }
+
+
+    .pagina-tobey #historia {
+        padding:
+            75px 19px;
+    }
+
+
+    .pagina-tobey #historia
+    .titulo-secao {
+        margin-bottom: 40px;
+    }
+
+
+    .pagina-tobey #historia
+    .historia-imagem {
+        height: 440px;
+    }
+
+
+    .pagina-tobey #historia
+    .ficha-horizontal {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey #historia
+    .ficha-horizontal > div {
+        min-height: 80px;
+
+        border-right: 0;
+    }
+
+
+    .pagina-tobey .momento-aranha,
+    .pagina-tobey .momento-aranha > img {
+        min-height: 580px;
+    }
+
+
+    .pagina-tobey .momento-conteudo h2 {
+        font-size:
+            clamp(3.6rem, 17vw, 5rem);
+    }
+
+
+    .pagina-tobey .tobey-frame-acao {
+        min-height: 520px;
+    }
+
+
+    .pagina-tobey .poderes-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey .poder-card {
+        min-height: 175px;
+    }
+
+
+    .pagina-tobey
+    .poder-card.destaque-poder {
+        grid-column: auto;
+
+        min-height: 190px;
+    }
+
+}
+
+
+/* =========================================================
+   FIM — CORREÇÃO V3 HÍBRIDA
+========================================================= */
+/* =========================================================
+   TOBEY V3 — CORREÇÃO FINAL
+   PRÓXIMAS EXIBIÇÕES + FOOTER
+========================================================= */
+
+
+/* =========================================================
+   PRÓXIMAS EXIBIÇÕES
+   VOLTA DA IDENTIDADE VERMELHA
+========================================================= */
+
+.pagina-tobey .trocar-aranha {
+    position: relative;
+
+    padding:
+        85px
+        clamp(30px, 8vw, 120px);
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            110deg,
+            #760810 0%,
+            #c20d18 42%,
+            #ef1825 70%,
+            #8d0912 100%
+        );
+
+    border: 0;
+}
+
+
+/* TEXTO NEXT GIGANTE AO FUNDO */
+
+.pagina-tobey .trocar-aranha::before {
+    content: "NEXT";
+
+    position: absolute;
+
+    right: -35px;
+    bottom: -45px;
+
+    color:
+        rgba(0, 0, 0, 0.13);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(9rem, 20vw, 20rem);
+
+    line-height: 0.8;
+
+    pointer-events: none;
+}
+
+
+/* PRÓXIMAS EXIBIÇÕES */
+
+.pagina-tobey .trocar-aranha > p {
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(1180px, 100%);
+
+    margin:
+        0 auto 45px;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 0.52rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.28em;
+
+    text-transform: uppercase;
+}
+
+
+/* CONTAINER DOS DOIS LINKS */
+
+.pagina-tobey .trocar-links {
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(1180px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 0;
+}
+
+
+/* ANDREW / TOM */
+
+.pagina-tobey .trocar-links a {
+    position: relative;
+
+    min-height: 145px;
+
+    padding:
+        25px 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    color:
+        #f4f1eb;
+
+    background:
+        transparent;
+
+    border: 0;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition:
+        background 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+
+/* LINHA ENTRE OS DOIS */
+
+.pagina-tobey .trocar-links a + a {
+    border-left:
+        1px solid
+        rgba(255, 255, 255, 0.20);
+}
+
+
+/* NOME */
+
+.pagina-tobey .trocar-links a strong {
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(3rem, 5vw, 5.4rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.02em;
+
+    text-transform: uppercase;
+}
+
+
+/* SETA */
+
+.pagina-tobey .trocar-links a span:last-child {
+    margin-left: 25px;
+
+    font-size:
+        clamp(2rem, 4vw, 4rem);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* HOVER */
+
+.pagina-tobey .trocar-links a:hover {
+    padding-left: 48px;
+
+    background:
+        rgba(0, 0, 0, 0.10);
+}
+
+
+.pagina-tobey .trocar-links a:hover
+span:last-child {
+    transform:
+        translateX(10px);
+}
+
+
+/* =========================================================
+   FOOTER — VOLTA PARA O ESTILO MAIS LIMPO
+========================================================= */
+
+.pagina-tobey .footer-tobey {
+    position: relative;
+
+    min-height: 350px;
+
+    padding:
+        75px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        #030303;
+
+    border: 0;
+}
+
+
+/* MIRANHA PICTURES */
+
+.pagina-tobey .footer-tobey::before {
+    content: "MIRANHA PICTURES";
+
+    margin-bottom: 20px;
+
+    color:
+        #555;
+
+    font-size: 0.45rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.35em;
+}
+
+
+/* LOGO / TÍTULO MIRANHA */
+
+.pagina-tobey .footer-tobey h2,
+.pagina-tobey .footer-tobey .footer-logo {
+    margin: 0;
+
+    color:
+        var(--vermelho-claro);
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(2.7rem, 5vw, 4.5rem);
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+/* TEXTO */
+
+.pagina-tobey .footer-tobey p {
+    max-width: 520px;
+
+    margin-top: 22px;
+
+    color:
+        #555;
+
+    font-size: 0.72rem;
+
+    line-height: 1.7;
+}
+
+
+/* LINKS */
+
+.pagina-tobey .footer-tobey a {
+    color:
+        #888;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.pagina-tobey .footer-tobey a:hover {
+    color:
+        var(--vermelho-claro);
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .pagina-tobey .trocar-aranha {
+        padding:
+            65px 22px;
+    }
+
+
+    .pagina-tobey .trocar-links {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .pagina-tobey .trocar-links a {
+        min-height: 120px;
+
+        padding:
+            25px 10px;
+    }
+
+
+    .pagina-tobey .trocar-links a + a {
+        border-left: 0;
+
+        border-top:
+            1px solid
+            rgba(255, 255, 255, 0.20);
+    }
+
+
+    .pagina-tobey .trocar-links a:hover {
+        padding-left: 20px;
+    }
+
+
+    .pagina-tobey .footer-tobey {
+        min-height: 300px;
+
+        padding:
+            65px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   FIM — CORREÇÃO FINAL
+========================================================= */
+
+/* =========================================================
+   CORREÇÃO — ENQUADRAMENTO "NÃO É O TRAJE"
+========================================================= */
+
+.pagina-tobey .tobey-frame-acao-imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /* sobe/abaixa o enquadramento para mostrar melhor o herói */
+    object-position: center 18%;
+
+    filter:
+        saturate(0.85)
+        contrast(1.08)
+        brightness(0.78);
+}
+/* =========================================================
+   CORREÇÃO DA IMAGEM — NÃO É O TRAJE QUE FAZ O HERÓI
+========================================================= */
+
+.pagina-tobey .momento-aranha {
+    position: relative;
+    min-height: 720px;
+    overflow: hidden;
+    background: #050505;
+}
+
+.pagina-tobey .momento-aranha > img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /* MOSTRA MAIS A PARTE DE CIMA DA FOTO */
+    object-position: center top;
+}
+/* HERO — TROCAR IMAGEM DO INÍCIO */
+
+.pagina-tobey .hero-tobey-fundo {
+    background-image: url("img/tobey-balanco.jpg") !important;
+    background-size: cover !important;
+    background-position: 65% center !important;
+    background-repeat: no-repeat !important;
+}
+/* =========================================================
+   HERO TOBEY — ENQUADRAMENTO FINAL
+========================================================= */
+
+.pagina-tobey .hero-tobey-fundo {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("img/tobey-balanco.jpg") !important;
+
+    /* NÃO usa cover nessa foto */
+   background-size: auto 108% !important;
+
+
+    /* Aranha mais para a direita */
+   background-position: 72% 25% !important;
+
+    background-repeat: no-repeat !important;
+    background-color: #050505 !important;
+}
+
+/* escurece a esquerda para o título continuar legível */
+.pagina-tobey .hero-tobey-fundo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.95) 0%,
+            rgba(0,0,0,.78) 25%,
+            rgba(0,0,0,.30) 52%,
+            rgba(0,0,0,.05) 78%
+        );
+
+    pointer-events: none;
+}
+/* =========================================================
+   TOBEY V3 — FRAME O HOMEM-ARANHA
+   Corrige a imagem gigante
+========================================================= */
+
+.pagina-tobey .tobey-frame-acao {
+    width: min(1180px, calc(100% - 60px));
+    min-height: 0;
+    height: auto;
+
+    margin: 100px auto;
+
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+
+    overflow: hidden;
+
+    background: #090909;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.pagina-tobey .tobey-frame-acao-imagem {
+    position: relative;
+    inset: auto;
+
+    width: 100%;
+    height: 560px;
+
+    overflow: hidden;
+
+    background: #050505;
+}
+
+
+.pagina-tobey .tobey-frame-acao-imagem img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    /*
+       Mostra melhor a parte superior do Homem-Aranha
+       sem transformar a foto em tela cheia.
+    */
+    object-position: center 25%;
+
+    filter:
+        saturate(0.90)
+        contrast(1.05)
+        brightness(0.82);
+
+    transition: transform 0.6s ease;
+}
+
+
+.pagina-tobey .tobey-frame-acao:hover
+.tobey-frame-acao-imagem img {
+    transform: scale(1.025);
+}
+
+
+/* NYC // FRAME 003 */
+
+.pagina-tobey .tobey-frame-acao-imagem > span {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 20px;
+    left: 20px;
+
+    padding: 8px 11px;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    border-left: 2px solid var(--vermelho-claro);
+
+    color: #aaa;
+
+    font-size: 0.48rem;
+    font-weight: 900;
+
+    letter-spacing: 0.17em;
+}
+
+
+/* Remove o degradê antigo que cobria
+   a seção inteira */
+
+.pagina-tobey .tobey-frame-acao::after {
+    display: none;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.pagina-tobey .tobey-frame-acao-info {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    min-width: 0;
+
+    padding: 55px 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101010,
+            #070707
+        );
+}
+
+
+/* IDENTIDADE ATIVA */
+
+.pagina-tobey .tobey-frame-acao-info small {
+    margin-bottom: 20px;
+
+    color: var(--vermelho-claro);
+
+    font-size: 0.50rem;
+    font-weight: 900;
+
+    letter-spacing: 0.20em;
+}
+
+
+/* O HOMEM-ARANHA */
+
+.pagina-tobey .tobey-frame-acao-info h2 {
+    margin: 0;
+
+    color: #f2efea;
+
+    font-family:
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size: clamp(3.2rem, 5vw, 5.3rem);
+
+    line-height: 0.88;
+
+    letter-spacing: -0.025em;
+
+    text-transform: uppercase;
+}
+
+
+/* LINHA VERMELHA */
+
+.pagina-tobey .tobey-frame-acao-info h2::after {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+    height: 3px;
+
+    margin-top: 25px;
+
+    background: var(--vermelho-claro);
+}
+
+
+/* TEXTO */
+
+.pagina-tobey .tobey-frame-acao-info p {
+    max-width: 390px;
+
+    margin-top: 25px;
+
+    color: #858585;
+
+    font-size: 0.80rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .pagina-tobey .tobey-frame-acao {
+        grid-template-columns: 1fr;
+
+        width: min(700px, calc(100% - 40px));
+
+        margin: 75px auto;
+    }
+
+
+    .pagina-tobey .tobey-frame-acao-imagem {
+        height: 500px;
+    }
+
+
+    .pagina-tobey .tobey-frame-acao-info {
+        padding: 45px 35px;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 520px) {
+
+    .pagina-tobey .tobey-frame-acao {
+        width: calc(100% - 30px);
+
+        margin: 55px auto;
+    }
+
+
+    .pagina-tobey .tobey-frame-acao-imagem {
+        height: 390px;
+    }
+
+
+    .pagina-tobey .tobey-frame-acao-imagem img {
+        object-position: center top;
+    }
+
+
+    .pagina-tobey .tobey-frame-acao-info {
+        padding: 35px 25px;
+    }
+
+
+    .pagina-tobey .tobey-frame-acao-info h2 {
+        font-size: 3.2rem;
+    }
+
+}
+
+
+/* =========================================================
+   FIM — FRAME O HOMEM-ARANHA
+========================================================= */
+/* =========================================
+   SIMBIOSE — ESTADO INATIVO
+========================================= */
+/* =========================================================
+   SIMBIOSE — CORREÇÃO FINAL
+   INATIVA = VISÍVEL / LIMPA
+   ATIVA = CORROMPIDA
+========================================================= */
+
+
+/* =========================================================
+   ESTADO INATIVO
+========================================================= */
+
+.pagina-tobey .traje-negro-v3 {
+    background:
+        radial-gradient(
+            circle at 25% 45%,
+            rgba(255, 255, 255, 0.06),
+            transparent 32%
+        ),
+        #050505;
+}
+
+
+/* Remove a escuridão exagerada inicial */
+
+.pagina-tobey .traje-negro-v3::after {
+    box-shadow:
+        inset 0 0 100px rgba(0, 0, 0, 0.48);
+}
+
+
+/* Ruído praticamente desligado */
+
+.pagina-tobey .simbionte-ruido {
+    opacity: 0.03;
+    transition: opacity 1s ease;
+}
+
+
+/* ---------- TEXTOS ---------- */
+
+.pagina-tobey .traje-negro-conteudo > p:first-child {
+    color: #a7a7a7;
+}
+
+
+.pagina-tobey .simbionte-codigo {
+    color: #d0d0d0;
+
+    border-color:
+        rgba(255, 255, 255, 0.22);
+}
+
+
+.pagina-tobey .traje-negro-conteudo h2 {
+    color: #f2f2f2;
+}
+
+
+.pagina-tobey .traje-negro-conteudo h2 span {
+    color: #c7c7c7;
+}
+
+
+.pagina-tobey .traje-negro-texto {
+    color: #b6b6b6;
+}
+
+
+/* ---------- DADOS ---------- */
+
+.pagina-tobey .simbionte-dados {
+    border-color:
+        rgba(255, 255, 255, 0.14);
+}
+
+
+.pagina-tobey .simbionte-dados > div {
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border-color:
+        rgba(255, 255, 255, 0.14);
+}
+
+
+.pagina-tobey .simbionte-dados span {
+    color: #888;
+}
+
+
+.pagina-tobey .simbionte-dados strong {
+    color: #e1e1e1;
+}
+
+
+/* ---------- BOTÃO ---------- */
+
+.pagina-tobey .botao-simbionte {
+    color: #e0e0e0;
+
+    border-color:
+        rgba(255, 255, 255, 0.35);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+
+/* ---------- STATUS ---------- */
+
+.pagina-tobey .simbionte-status {
+    color: #8c8c8c;
+}
+
+
+.pagina-tobey .simbionte-status > span {
+    background: #777;
+}
+
+
+/* =========================================================
+   IMAGEM — INATIVA
+========================================================= */
+
+.pagina-tobey .traje-negro-imagem img {
+    filter:
+        brightness(0.92)
+        contrast(1.04)
+        saturate(0.95);
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition:
+        filter 1.1s ease,
+        transform 1.1s ease,
+        opacity 1.1s ease;
+}
+
+
+/* Overlay bem leve inicialmente */
+
+.pagina-tobey .simbionte-frame-overlay {
+    opacity: 0.18;
+
+    transition:
+        opacity 1.1s ease;
+}
+
+
+/* =========================================================
+   CAPÍTULO III — MAIS LEGÍVEL
+========================================================= */
+
+.pagina-tobey .tobey-capitulo-negro > span {
+    color: #bcbcbc;
+}
+
+
+.pagina-tobey .tobey-capitulo-negro > strong {
+    color: #f0f0f0;
+}
+
+
+.pagina-tobey .tobey-capitulo-negro > small {
+    color: #999;
+}
+
+
+/* =========================================================
+   SIMBIOSE ATIVA
+
+   IMPORTANTE:
+   esta versão usa a classe no BODY:
+   body.pagina-tobey.simbionte-ativo
+========================================================= */
+
+.pagina-tobey.simbionte-ativo .traje-negro-v3 {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255, 255, 255, 0.025),
+            transparent 30%
+        ),
+        #000;
+}
+
+
+/* Vinheta aumenta */
+
+.pagina-tobey.simbionte-ativo
+.traje-negro-v3::after {
+    box-shadow:
+        inset 0 0 190px rgba(0, 0, 0, 0.90);
+}
+
+
+/* Ruído aparece */
+
+.pagina-tobey.simbionte-ativo
+.simbionte-ruido {
+    opacity: 0.32;
+}
+
+
+/* Imagem é contaminada */
+
+.pagina-tobey.simbionte-ativo
+.traje-negro-imagem img {
+    filter:
+        grayscale(0.75)
+        saturate(0.35)
+        brightness(0.58)
+        contrast(1.22);
+
+    transform:
+        scale(1.035);
+}
+
+
+/* Overlay aparece */
+
+.pagina-tobey.simbionte-ativo
+.simbionte-frame-overlay {
+    opacity: 1;
+}
+
+
+/* Textos também começam a apagar */
+
+.pagina-tobey.simbionte-ativo
+.traje-negro-conteudo > p:first-child {
+    color: #666;
+}
+
+
+.pagina-tobey.simbionte-ativo
+.simbionte-codigo {
+    color: #888;
+}
+
+
+.pagina-tobey.simbionte-ativo
+.traje-negro-conteudo h2 {
+    color: #d8d8d8;
+}
+
+
+.pagina-tobey.simbionte-ativo
+.traje-negro-conteudo h2 span {
+    color: #686868;
+}
+
+
+.pagina-tobey.simbionte-ativo
+.traje-negro-texto {
+    color: #777;
+}
+
+
+/* Dados */
+
+.pagina-tobey.simbionte-ativo
+.simbionte-dados span {
+    color: #505050;
+}
+
+
+.pagina-tobey.simbionte-ativo
+.simbionte-dados strong {
+    color: #aaa;
+}
+
+
+/* Botão ativo */
+
+.pagina-tobey.simbionte-ativo
+.botao-simbionte {
+    color: #050505;
+
+    background: #dedede;
+
+    border-color: #dedede;
+
+    box-shadow:
+        0 0 30px
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* Status ativo */
+
+.pagina-tobey.simbionte-ativo
+.simbionte-status {
+    color: #d0d0d0;
+}
+
+
+.pagina-tobey.simbionte-ativo
+.simbionte-status > span {
+    background: #eee;
+
+    box-shadow:
+        0 0 14px
+        rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   FIM — CORREÇÃO SIMBIOSE
+========================================================= */
+/* =========================================================
+   TRANSFORMAÇÃO VISUAL — SIMBIOSE
+   NORMAL → TRAJE PRETO
+========================================================= */
+
+
+/* Área das imagens */
+.pagina-tobey .traje-negro-imagem {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* As duas imagens ocupam exatamente o mesmo espaço */
+.pagina-tobey .traje-negro-imagem .simbionte-imagem {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        opacity 1.15s ease,
+        filter 1.15s ease,
+        transform 1.4s ease;
+}
+
+
+/* =========================================================
+   ESTADO NORMAL
+========================================================= */
+
+
+/* Vermelho aparece */
+.pagina-tobey .simbionte-imagem-normal {
+    opacity: 1;
+
+    object-position: center center;
+
+    filter:
+        brightness(0.95)
+        contrast(1.05)
+        saturate(1.05);
+
+    transform: scale(1);
+}
+
+
+/* Preto começa completamente escondido */
+.pagina-tobey .simbionte-imagem-preta {
+    opacity: 0;
+
+    object-position: center 25%;
+
+    filter:
+        brightness(0.35)
+        contrast(1.15)
+        saturate(0.5);
+
+    transform: scale(1.06);
+}
+
+
+/* Overlay praticamente desligado */
+.pagina-tobey .simbionte-frame-overlay {
+    opacity: 0;
+
+    transition:
+        opacity 0.8s ease;
+}
+
+
+/* =========================================================
+   SIMBIOSE ATIVA
+========================================================= */
+
+
+/* Homem-Aranha vermelho desaparece */
+.pagina-tobey.simbionte-ativo
+.simbionte-imagem-normal {
+    opacity: 0;
+
+    filter:
+        brightness(0.15)
+        contrast(1.25)
+        saturate(0.25);
+
+    transform: scale(1.04);
+}
+
+
+/* Homem-Aranha preto aparece */
+.pagina-tobey.simbionte-ativo
+.simbionte-imagem-preta {
+    opacity: 1;
+
+    filter:
+        brightness(0.88)
+        contrast(1.08)
+        saturate(0.85);
+
+    transform: scale(1);
+}
+
+
+/* Escurecimento durante a transformação */
+.pagina-tobey.simbionte-ativo
+.simbionte-frame-overlay {
+    opacity: 0.32;
+}
+
+
+/* =========================================================
+   EFEITO DE ESCURECIMENTO DA SEÇÃO
+========================================================= */
+
+.pagina-tobey .traje-negro-v3 {
+    transition:
+        background 1.2s ease,
+        filter 1.2s ease;
+}
+
+
+.pagina-tobey.simbionte-ativo
+.traje-negro-v3 {
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(255,255,255,0.025),
+            transparent 30%
+        ),
+        #010101;
+}
+
+
+/* Ruído desligado antes */
+.pagina-tobey .simbionte-ruido {
+    opacity: 0.02;
+
+    transition:
+        opacity 1s ease;
+}
+
+
+/* Ruído entra quando ativa */
+.pagina-tobey.simbionte-ativo
+.simbionte-ruido {
+    opacity: 0.25;
+}
+
+
+/* =========================================================
+   TEXTO DO FRAME
+========================================================= */
+
+.pagina-tobey #simbionteFrameTexto {
+    position: absolute;
+    z-index: 20;
+
+    top: 20px;
+    left: 20px;
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 0.55rem;
+    font-weight: 900;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.8s ease;
+}
+
+
+.pagina-tobey.simbionte-ativo
+#simbionteFrameTexto {
+    color: rgba(255,255,255,0.42);
+}
+
+
+/* =========================================================
+   GARANTE QUE O OVERLAY FIQUE ACIMA DAS IMAGENS
+========================================================= */
+
+.pagina-tobey .simbionte-frame-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   CORREÇÃO FINAL — TROCA DAS IMAGENS DA SIMBIOSE
+========================================================= */
+
+/* NORMAL: vermelho visível */
+.pagina-tobey
+.traje-negro-imagem
+.simbionte-imagem-normal {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+/* NORMAL: preto escondido */
+.pagina-tobey
+.traje-negro-imagem
+.simbionte-imagem-preta {
+    opacity: 0;
+    z-index: 3;
+}
+
+
+/* ATIVA: vermelho desaparece */
+.pagina-tobey.simbionte-ativo
+.traje-negro-imagem
+.simbionte-imagem-normal {
+    opacity: 0;
+}
+
+
+/* ATIVA: preto aparece */
+.pagina-tobey.simbionte-ativo
+.traje-negro-imagem
+.simbionte-imagem-preta {
+    opacity: 1;
+}
+/* =========================================================
+   CORREÇÃO — SIMBIOSE + ENCERRAMENTO
+========================================================= */
+
+
+/* ---------- FRAME DA SIMBIOSE ---------- */
+
+.pagina-tobey .traje-negro {
+    grid-template-columns: minmax(0, 0.9fr) minmax(500px, 1.1fr);
+}
+
+.pagina-tobey .traje-negro-imagem {
+    position: relative;
+
+    width: 100%;
+    height: 620px;
+    min-height: 0;
+
+    align-self: center;
+
+    overflow: hidden;
+
+    background: #050505;
+}
+
+
+/* DUAS IMAGENS */
+
+.pagina-tobey .traje-negro-imagem .simbionte-imagem {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    transition:
+        opacity 0.9s ease,
+        filter 1s ease,
+        transform 1.2s ease;
+}
+
+
+/* IMAGEM NORMAL — horizontal */
+
+.pagina-tobey
+.traje-negro-imagem
+.simbionte-imagem-normal {
+    opacity: 1;
+    z-index: 2;
+
+    object-fit: cover;
+    object-position: center 42%;
+
+    transform: scale(1);
+}
+
+
+/* IMAGEM PRETA — vertical */
+
+
+.pagina-tobey
+.traje-negro-imagem
+.simbionte-imagem-preta {
+    opacity: 0;
+    z-index: 3;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: #050505;
+
+    transform: scale(1);
+}
+
+/* QUANDO ATIVA */
+
+.pagina-tobey.simbionte-ativo
+.traje-negro-imagem
+.simbionte-imagem-normal {
+    opacity: 0 !important;
+
+    filter:
+        brightness(0.15)
+        grayscale(0.8);
+
+    transform: scale(1.03);
+}
+
+
+.pagina-tobey.simbionte-ativo
+.traje-negro-imagem
+.simbionte-imagem-preta {
+    opacity: 1 !important;
+
+    filter:
+        brightness(0.9)
+        contrast(1.08);
+
+    transform: scale(1);
+}
+
+
+/* ---------- ENCERRAMENTO ---------- */
+
+/* NÃO dividir as duas seções */
+
+.pagina-tobey .tobey-encerramento,
+.pagina-tobey .trocar-aranha {
+    width: 100% !important;
+}
+
+
+/* responsabilidade ocupa uma linha inteira */
+
+.pagina-tobey .tobey-encerramento {
+    display: flex !important;
+
+    min-height: 680px;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    clear: both;
+}
+
+
+/* próxima exibição vem EMBAIXO */
+
+.pagina-tobey .trocar-aranha {
+    display: block !important;
+
+    clear: both;
+
+    min-height: 430px;
+}
+
+
+/* impede qualquer grid antigo de colocar as duas lado a lado */
+
+.pagina-tobey .tobey-encerramento + .trocar-aranha {
+    position: relative;
+
+    left: auto;
+    right: auto;
+
+    float: none;
+
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+    .pagina-tobey .traje-negro {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-tobey .traje-negro-imagem {
+        height: 520px;
+    }
+}

@@ -1,0 +1,783 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================================
+   VILÕES.CSS — MIRANHA
+   Base compartilhada + identidade individual dos 9 vilões
+   ========================================================= */
+
+:root{
+    --preto:#050607;
+    --preto-2:#0a0c0e;
+    --branco:#f5f5f5;
+    --cinza:#9ca3aa;
+    --linha:rgba(255,255,255,.12);
+    --perigo:#e22b2b;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    min-height:100vh;
+    background:var(--preto);
+    color:var(--branco);
+    font-family:"Montserrat",sans-serif;
+    overflow-x:hidden;
+}
+body::selection{background:#fff;color:#000}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+h1,h2,h3,.logo-vilao{font-family:"Anton",sans-serif;letter-spacing:.03em}
+section{position:relative}
+.texto-perigo{color:#ff5656!important}
+
+/* ---------- Entrada ---------- */
+.entrada-vilao{
+    position:fixed;inset:0;z-index:9999;
+    display:grid;place-items:center;
+    background:#030404;
+    transition:opacity .65s ease,visibility .65s ease;
+}
+.entrada-vilao.saindo{opacity:0;visibility:hidden}
+.entrada-conteudo{position:relative;z-index:3;text-align:center;padding:30px}
+.entrada-conteudo p,.entrada-conteudo small{
+    letter-spacing:.25em;text-transform:uppercase;color:#aab0b5
+}
+.entrada-conteudo h1{font-size:clamp(3.4rem,10vw,8rem);line-height:.9;margin:18px 0}
+.entrada-vilao-dados,.entrada-duende-dados,.entrada-octopus-dados,
+.entrada-areia-dados,.entrada-venom-dados,.entrada-lagarto-dados,
+.entrada-electro-dados,.entrada-mysterio-dados,.entrada-harry-dados{
+    position:absolute;left:5%;right:5%;bottom:35px;z-index:3;
+    display:flex;justify-content:space-between;gap:20px;
+    font-size:.68rem;letter-spacing:.18em;color:#899097
+}
+
+/* ---------- Menu ---------- */
+.menu-vilao{
+    position:sticky;top:0;z-index:1000;height:70px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 5%;background:rgba(5,6,7,.78);
+    border-bottom:1px solid var(--linha);
+    backdrop-filter:blur(15px);
+    transition:.3s ease;
+}
+.menu-vilao.menu-rolado{background:rgba(3,4,5,.96)}
+.logo-vilao{font-size:1.45rem}
+.links-vilao{display:flex;gap:24px}
+.links-vilao a,.nivel-menu{
+    font-size:.67rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase
+}
+.links-vilao a{opacity:.68;transition:.2s}
+.links-vilao a:hover{opacity:1}
+.nivel-menu{display:flex;gap:8px}.nivel-menu span{opacity:.5}
+
+/* ---------- Base visual ---------- */
+.codigo-ameaca{font-size:.72rem;letter-spacing:.16em;font-weight:800;margin-bottom:18px}
+.ponto-ameaca{
+    display:inline-block;width:7px;height:7px;border-radius:50%;
+    background:currentColor;margin-right:8px;box-shadow:0 0 14px currentColor
+}
+.hero-duende,.hero-octopus,.hero-areia,.hero-venom,.hero-lagarto,
+.hero-electro,.hero-mysterio,.hero-harry,.hero-abutre{
+    min-height:calc(100vh - 70px);
+    display:grid;grid-template-columns:1fr 1fr;align-items:center;
+    gap:4vw;padding:70px 6%;overflow:hidden;position:relative
+}
+.hero-duende-conteudo,.hero-octopus-conteudo,.hero-areia-conteudo,
+.hero-venom-conteudo,.hero-lagarto-conteudo,.hero-electro-conteudo,
+.hero-mysterio-conteudo,.hero-harry-conteudo,.hero-abutre-conteudo{position:relative;z-index:3}
+.hero-duende h1,.hero-octopus h1,.hero-areia h1,.hero-venom h1,
+.hero-lagarto h1,.hero-electro h1,.hero-mysterio h1,.hero-harry h1,.hero-abutre h1{
+    font-size:clamp(4rem,9vw,8.8rem);line-height:.82;text-transform:uppercase
+}
+.hero-duende-frase,.hero-octopus-frase,.hero-areia-frase,.hero-venom-frase,
+.hero-lagarto-frase,.hero-electro-frase,.hero-mysterio-frase,.hero-harry-frase,.hero-abutre-frase{
+    max-width:600px;margin:28px 0;line-height:1.8;color:#c4c7ca
+}
+.hero-duende-imagem,.hero-octopus-imagem,.hero-areia-imagem,.hero-venom-imagem,
+.hero-lagarto-imagem,.hero-electro-imagem,.hero-mysterio-imagem,.hero-harry-imagem,.hero-abutre-imagem{
+    height:min(72vh,760px);position:relative;z-index:2;overflow:hidden;
+    border:1px solid var(--linha)
+}
+.hero-duende-imagem img,.hero-octopus-imagem img,.hero-areia-imagem img,.hero-venom-imagem img,
+.hero-lagarto-imagem img,.hero-electro-imagem img,.hero-mysterio-imagem img,.hero-harry-imagem img,.hero-abutre-imagem img{
+    width:100%;height:100%;object-fit:cover
+}
+.hero-duende-numero,.hero-octopus-numero,.hero-areia-numero,.hero-venom-numero,
+.hero-lagarto-numero,.hero-electro-numero,.hero-mysterio-numero,.hero-harry-numero,.hero-abutre-numero{
+    position:absolute;right:2%;top:1%;font:18vw "Anton";line-height:1;
+    color:rgba(255,255,255,.025);pointer-events:none
+}
+.hero-duende-lateral,.hero-octopus-lateral,.hero-areia-lateral,.hero-venom-lateral,
+.hero-lagarto-lateral,.hero-electro-lateral,.hero-mysterio-lateral,.hero-harry-lateral,.hero-abutre-lateral{
+    position:absolute;right:15px;top:50%;transform:translateY(-50%);
+    writing-mode:vertical-rl;display:flex;gap:25px;
+    font-size:.58rem;letter-spacing:.17em;opacity:.45
+}
+.botao-duende,.botao-octopus,.botao-areia,.botao-venom,.botao-lagarto,
+.botao-electro,.botao-mysterio,.botao-harry,.botao-abutre,
+.botao-instabilidade,.botao-desconectar,.botao-analisar-areia,
+.botao-analisar-venom,.botao-analisar-lagarto,.botao-sobrecarga,
+.botao-analisar-mysterio,.botao-legado-harry,.botao-rastrear-abutre{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:48px;padding:0 22px;border:1px solid currentColor;
+    background:transparent;color:inherit;cursor:pointer;
+    font-weight:900;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+    transition:.25s ease
+}
+.hero-duende-botoes,.hero-octopus-botoes,.hero-areia-botoes,.hero-venom-botoes,
+.hero-lagarto-botoes,.hero-electro-botoes,.hero-mysterio-botoes,.hero-harry-botoes,.hero-abutre-botoes{
+    display:flex;gap:20px;align-items:center;flex-wrap:wrap
+}
+.link-duende,.link-octopus,.link-areia,.link-venom,.link-lagarto,
+.link-electro,.link-mysterio,.link-harry,.link-abutre{
+    font-size:.7rem;font-weight:800;letter-spacing:.1em;opacity:.7
+}
+
+/* ---------- Seções e grids genéricos ---------- */
+.secao-animada{opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s ease}
+.secao-animada.visivel{opacity:1;transform:none}
+[class*="-topo"]>span,[class*="-conteudo"]>span,.nivel-ameaca-cabecalho span{
+    display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:.68
+}
+section h2{font-size:clamp(2.4rem,6vw,5.5rem);line-height:.95;text-transform:uppercase}
+section p{line-height:1.8;color:#bec3c7}
+blockquote{margin-top:25px;padding-left:20px;border-left:2px solid currentColor;line-height:1.7}
+.dossie-duende,.dossie-octopus,.flint-section,.eddie-section,.connors-section,
+.max-section,.heroi-mysterio,.beck-section,.harry-section,.adrian-section,
+.capacidades-duende,.capacidades-octopus,.capacidades-areia,.capacidades-venom,
+.capacidades-lagarto,.capacidades-electro,.drones-mysterio,.arsenal-harry,.capacidades-abutre,
+.nivel-ameaca-duende,.nivel-ameaca-octopus,.nivel-ameaca-areia,.nivel-ameaca-venom,
+.nivel-ameaca-lagarto,.nivel-ameaca-electro,.nivel-ameaca-mysterio,.nivel-ameaca-harry,.nivel-ameaca-abutre{
+    padding:110px 7%
+}
+.dossie-duende-grid,.dossie-octopus-grid,.flint-grid,.eddie-grid,.connors-grid,.max-grid,
+.heroi-mysterio-grid,.beck-grid,.harry-grid,.adrian-grid,
+.sistema-bracos-grid,.estrutura-grid,.analise-venom-grid,.dna-lagarto-grid,
+.energia-electro-grid,.sistema-mysterio-grid,.legado-osborn-grid,.rastreamento-abutre-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center;margin-top:45px
+}
+.dado-vilao,.max-dados>div,.beck-dados>div,.harry-dados>div,.adrian-dados>div,
+.eddie-dados>div,.connors-dados>div{
+    padding:15px 0;border-bottom:1px solid var(--linha);
+    display:flex;justify-content:space-between;gap:20px
+}
+.dado-vilao span,.max-dados span,.beck-dados span,.harry-dados span,.adrian-dados span,
+.eddie-dados span,.connors-dados span{font-size:.65rem;letter-spacing:.12em;opacity:.55}
+.dado-vilao strong,.max-dados strong,.beck-dados strong,.harry-dados strong,.adrian-dados strong,
+.eddie-dados strong,.connors-dados strong{font-size:.85rem;text-align:right}
+.poderes-grid,.arsenal-grid,.capacidades-octopus-grid,.capacidades-areia-grid,
+.capacidades-venom-grid,.capacidades-lagarto-grid,.capacidades-electro-grid,
+.drones-mysterio-grid,.arsenal-harry-grid,.capacidades-abutre-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:45px
+}
+.arma-duende,.capacidade-octopus,.capacidade-areia,.capacidade-venom,.capacidade-lagarto,
+.capacidade-electro,.drone-mysterio,.arma-harry,.capacidade-abutre{
+    min-height:250px;padding:28px;border:1px solid var(--linha);background:rgba(255,255,255,.025);
+    transition:.25s
+}
+.arma-duende:hover,.capacidade-octopus:hover,.capacidade-areia:hover,.capacidade-venom:hover,
+.capacidade-lagarto:hover,.capacidade-electro:hover,.drone-mysterio:hover,.arma-harry:hover,.capacidade-abutre:hover{
+    transform:translateY(-6px);background:rgba(255,255,255,.05)
+}
+.arma-duende h3,.capacidade-octopus h3,.capacidade-areia h3,.capacidade-venom h3,
+.capacidade-lagarto h3,.capacidade-electro h3,.drone-mysterio h3,.arma-harry h3,.capacidade-abutre h3{
+    font-size:1.7rem;margin:30px 0 15px
+}
+.medidor-ameaca{margin:45px 0}
+.medidor-info{display:flex;justify-content:space-between;font-size:.6rem;letter-spacing:.1em;opacity:.55}
+.medidor-barra{height:8px;background:#171a1d;margin-top:10px;overflow:hidden}
+.medidor-barra span{display:block;width:92%;height:100%;background:currentColor;box-shadow:0 0 20px currentColor}
+.ameaca-estatisticas{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ameaca-estatisticas>div{padding:22px;border:1px solid var(--linha)}
+.ameaca-estatisticas span{display:block;font-size:.62rem;letter-spacing:.12em;opacity:.55}
+.ameaca-estatisticas strong{display:block;font:2rem "Anton";margin-top:8px}
+.outras-ameacas{padding:100px 7%;border-top:1px solid var(--linha)}
+.outras-ameacas-links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:35px}
+.outras-ameacas-links a{padding:25px;border:1px solid var(--linha);transition:.25s}
+.outras-ameacas-links a:hover{transform:translateY(-5px);background:rgba(255,255,255,.04)}
+.outras-ameacas-links span,.outras-ameacas-links small{display:block;font-size:.6rem;letter-spacing:.12em;opacity:.55}
+.outras-ameacas-links strong{display:block;font:1.8rem "Anton";margin:12px 0}
+.footer-vilao{
+    min-height:180px;padding:40px 7%;display:flex;align-items:center;justify-content:space-between;
+    gap:20px;border-top:1px solid var(--linha);font-size:.72rem;letter-spacing:.1em
+}
+.footer-vilao>strong{font:2rem "Anton"}
+
+/* =========================================================
+   001 — DUENDE VERDE / terror psicológico
+   ========================================================= */
+.pagina-duende{--vilao:#64ff5d;--vilao2:#173d18;background:#040704;color:#eef5ed}
+.pagina-duende .menu-vilao,.pagina-duende section{border-color:rgba(100,255,93,.13)}
+.pagina-duende strong,.pagina-duende .codigo-ameaca{color:var(--vilao)}
+.entrada-duende{background:radial-gradient(circle at 70% 35%,#102511,#020402 55%)}
+.hero-duende{background:radial-gradient(circle at 75% 40%,#142617,#030503 55%)}
+.hero-duende-imagem{transform:rotate(1deg);box-shadow:0 0 70px rgba(50,255,70,.08)}
+.interferencia-duende{
+    position:fixed;inset:0;z-index:7000;pointer-events:none;opacity:0;
+    background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(74,255,64,.12) 4px 5px)
+}
+.interferencia-duende.ativa{animation:duendeGlitch .7s steps(2)}
+@keyframes duendeGlitch{0%,100%{opacity:0}15%,35%,60%{opacity:.9;transform:translateX(5px)}25%,50%{opacity:.45;transform:translateX(-7px)}}
+.aparicao-duende{
+    position:fixed;inset:0;z-index:7100;background:#020302;display:grid;place-items:center;
+    opacity:0;visibility:hidden;transition:.18s;pointer-events:none
+}
+.aparicao-duende.ativa{opacity:1;visibility:visible}
+.aparicao-duende img{width:min(520px,80vw);max-height:65vh;object-fit:cover;filter:contrast(1.3) brightness(.65)}
+.aparicao-duende div{text-align:center}.aparicao-duende strong{font:clamp(2rem,6vw,5rem) "Anton"}
+.alerta-duende{position:fixed;right:25px;bottom:25px;z-index:7200;padding:18px;background:#071008;border:1px solid var(--vilao);display:none}
+.alerta-duende.ativa{display:block}
+.mensagem-duende{padding:90px 7%;text-align:center;font:clamp(2rem,5vw,5rem) "Anton";background:#020302}
+.mente-duende,.origem-duende,.confronto-duende,.ultimo-registro-duende{padding:100px 7%}
+
+/* =========================================================
+   002 — DOUTOR OCTOPUS / industrial mecânico
+   ========================================================= */
+.pagina-octopus{--vilao:#ff5b28;--vilao2:#7d1710;background:#070707}
+.pagina-octopus strong,.pagina-octopus .codigo-ameaca{color:var(--vilao)}
+.entrada-octopus,.hero-octopus{background:linear-gradient(120deg,#050505 45%,#20100a)}
+.hero-octopus-grade,.entrada-octopus-grade{
+    position:absolute;inset:0;opacity:.12;
+    background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);
+    background-size:45px 45px
+}
+.braco-decorativo{
+    position:fixed;z-index:30;width:170px;height:24px;border:2px solid #4b4b4b;
+    background:linear-gradient(90deg,#111,#666,#111);opacity:.22;pointer-events:none;
+    transition:transform .6s ease,opacity .4s
+}
+.braco-01{left:-120px;top:20%;transform:rotate(20deg)}
+.braco-02{right:-120px;top:32%;transform:rotate(-20deg)}
+.braco-03{left:-130px;bottom:25%;transform:rotate(-18deg)}
+.braco-04{right:-130px;bottom:18%;transform:rotate(18deg)}
+.pagina-octopus.bracos-ativos .braco-01{transform:translateX(75px) rotate(20deg);opacity:.7}
+.pagina-octopus.bracos-ativos .braco-02{transform:translateX(-75px) rotate(-20deg);opacity:.7}
+.pagina-octopus.bracos-ativos .braco-03{transform:translateX(80px) rotate(-18deg);opacity:.7}
+.pagina-octopus.bracos-ativos .braco-04{transform:translateX(-80px) rotate(18deg);opacity:.7}
+.alarme-octopus{
+    position:fixed;inset:0;z-index:7000;background:rgba(255,20,0,.18);opacity:0;pointer-events:none
+}
+.alarme-octopus.ativa{animation:alarme .18s 5 alternate}
+@keyframes alarme{to{opacity:1}}
+.falha-octopus,.alerta-octopus{
+    position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:7100;
+    padding:25px;background:#090909;border:1px solid #f33;display:none;text-align:center
+}
+.falha-octopus.ativa,.alerta-octopus.ativa{display:block}
+.sistema-bracos,.experimento-octopus,.acidente-octopus,.reator-octopus,.confronto-octopus,.trem-octopus,.ultimo-registro-octopus{padding:100px 7%}
+.braco-status.alerta,.inibidor-status{color:#ff4b3b}
+
+/* =========================================================
+   003 — HOMEM-AREIA / poeira e melancolia
+   ========================================================= */
+.pagina-areia{--vilao:#d8ad68;--vilao2:#6e512d;background:#0c0a07;color:#eee6d9}
+.pagina-areia strong,.pagina-areia .codigo-ameaca{color:var(--vilao)}
+.entrada-areia,.hero-areia{background:radial-gradient(circle at 70% 30%,#3b2b17,#090704 60%)}
+.tempestade-areia{
+    position:fixed;inset:0;z-index:6500;pointer-events:none;opacity:0;
+    background-image:radial-gradient(circle,rgba(218,177,107,.45) 0 1px,transparent 1.5px);
+    background-size:13px 13px
+}
+.pagina-areia.areia-intensa .tempestade-areia{opacity:.18;animation:poeira 9s linear infinite}
+@keyframes poeira{to{background-position:300px -180px}}
+.onda-areia{
+    position:fixed;left:-120%;top:0;width:120%;height:100%;z-index:6900;pointer-events:none;
+    background:linear-gradient(90deg,transparent,rgba(190,143,75,.45),transparent);transform:skewX(-12deg)
+}
+.onda-areia.ativa{animation:ondaAreia 1.25s ease}
+@keyframes ondaAreia{to{left:120%}}
+.alerta-areia{position:fixed;right:20px;bottom:20px;z-index:7000;background:#171006;border:1px solid var(--vilao);padding:18px;display:none}
+.alerta-areia.ativa{display:block}
+.humano-areia,.transformacao-areia,.nascimento-areia,.estrutura-areia,.gigante-areia,.confronto-areia,.ultimo-registro-areia{padding:100px 7%}
+.pagina-areia .dissolvendo{animation:dissolver .8s ease}
+@keyframes dissolver{50%{filter:blur(3px);opacity:.35;letter-spacing:.12em;transform:translateX(10px)}}
+
+/* =========================================================
+   004 — VENOM / invasão orgânica
+   ========================================================= */
+.pagina-venom{--vilao:#e9e9ee;--vilao2:#39284e;background:#020203}
+.pagina-venom strong,.pagina-venom .codigo-ameaca{color:#fff}
+.entrada-venom,.hero-venom{background:radial-gradient(circle at 70% 40%,#17111e,#010102 60%)}
+.infeccao-venom{
+    position:fixed;inset:0;z-index:6800;pointer-events:none;opacity:0;
+    background:
+      radial-gradient(ellipse at 0 30%,#000 0 8%,transparent 22%),
+      radial-gradient(ellipse at 100% 70%,#000 0 12%,transparent 28%);
+    transition:opacity .35s,transform .5s
+}
+.infeccao-venom.ativa{opacity:.96;transform:scale(1.12)}
+.simbionte-borda{position:fixed;top:0;bottom:0;width:32px;z-index:40;background:#000;opacity:.5;filter:blur(2px)}
+.simbionte-borda-esquerda{left:0}.simbionte-borda-direita{right:0}
+.venom-aparicao{
+    position:fixed;inset:0;z-index:7100;background:#000;display:grid;place-items:center;
+    opacity:0;visibility:hidden;transition:.2s;pointer-events:none
+}
+.venom-aparicao.ativa{opacity:1;visibility:visible}
+.venom-aparicao-texto{font:clamp(3rem,10vw,9rem) "Anton";letter-spacing:.08em}
+.alerta-venom{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);z-index:7200;padding:18px 25px;background:#000;border:1px solid #aaa;display:none}
+.alerta-venom.ativa{display:block}
+.eddie-section,.simbionte-section,.compatibilidade-venom,.uniao-venom,.analise-venom,.invasao-venom,.nos-somos-venom,.fraqueza-venom,.confronto-venom,.batalha-venom,.ultimo-registro-venom{padding:100px 7%}
+.onda-sonora{height:80px;background:repeating-radial-gradient(ellipse at center,transparent 0 10px,rgba(255,255,255,.25) 11px 12px,transparent 13px 22px);animation:ondaSom 1.8s linear infinite}
+@keyframes ondaSom{50%{transform:scaleX(1.06);opacity:.35}}
+
+/* =========================================================
+   005 — LAGARTO / laboratório contaminado
+   ========================================================= */
+.pagina-lagarto{--vilao:#76d36c;--vilao2:#1d5428;background:#050907}
+.pagina-lagarto strong,.pagina-lagarto .codigo-ameaca{color:var(--vilao)}
+.entrada-lagarto,.hero-lagarto{background:linear-gradient(135deg,#07110d,#020403 65%)}
+.hero-lagarto-grade,.entrada-lagarto-grade{
+    position:absolute;inset:0;opacity:.12;
+    background-image:linear-gradient(rgba(120,255,150,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(120,255,150,.35) 1px,transparent 1px);
+    background-size:36px 36px
+}
+.contaminacao-lagarto{
+    position:fixed;inset:0;z-index:6500;pointer-events:none;opacity:0;
+    background:radial-gradient(circle at 20% 80%,rgba(40,120,45,.28),transparent 35%),radial-gradient(circle at 90% 15%,rgba(70,150,60,.2),transparent 30%);
+    transition:.6s
+}
+.pagina-lagarto.contaminado .contaminacao-lagarto{opacity:1}
+.garra-lagarto{
+    position:fixed;left:-30%;top:20%;width:160%;height:60%;z-index:7000;pointer-events:none;
+    opacity:0;background:linear-gradient(165deg,transparent 46%,rgba(180,255,180,.8) 47%,transparent 48%),
+    linear-gradient(170deg,transparent 53%,rgba(180,255,180,.65) 54%,transparent 55%)
+}
+.garra-lagarto.ativa{animation:garra .65s ease}
+@keyframes garra{20%,70%{opacity:.9;transform:translateX(5%)}100%{opacity:0;transform:translateX(15%)}}
+.aparicao-lagarto{
+    position:fixed;inset:0;z-index:7100;background:#020503;display:grid;place-items:center;
+    opacity:0;visibility:hidden;pointer-events:none
+}
+.aparicao-lagarto.ativa{opacity:1;visibility:visible}
+.alerta-lagarto{position:fixed;right:25px;bottom:25px;z-index:7200;padding:18px;background:#061008;border:1px solid var(--vilao);display:none}
+.alerta-lagarto.ativa{display:block}
+.projeto-lagarto,.regeneracao-lagarto,.mutacao-lagarto,.nascimento-lagarto,.dna-lagarto,.contaminacao-section,.plano-lagarto,.confronto-lagarto,.final-lagarto,.ultimo-registro-lagarto{padding:100px 7%}
+
+/* =========================================================
+   006 — ELECTRO / rede elétrica em sobrecarga
+   ========================================================= */
+.pagina-electro{--vilao:#58d9ff;--vilao2:#155eff;background:#02070b}
+.pagina-electro strong,.pagina-electro .codigo-ameaca{color:var(--vilao)}
+.entrada-electro,.hero-electro{background:radial-gradient(circle at 72% 42%,#072d49,#010508 58%)}
+.hero-electro-grade,.entrada-electro-grade{
+    position:absolute;inset:0;opacity:.14;
+    background-image:linear-gradient(rgba(90,220,255,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(90,220,255,.25) 1px,transparent 1px);
+    background-size:42px 42px
+}
+.apagao-electro{position:fixed;inset:0;z-index:7300;background:#000;opacity:0;pointer-events:none}
+.apagao-electro.ativo{animation:apagao .95s steps(2)}
+@keyframes apagao{0%,100%{opacity:0}18%,68%{opacity:1}72%{opacity:.25}78%{opacity:1}}
+.flash-electro{position:fixed;inset:0;z-index:7350;background:#dff9ff;opacity:0;pointer-events:none}
+.flash-electro.ativo{animation:flashEle .5s ease}
+@keyframes flashEle{15%{opacity:.95}100%{opacity:0}}
+.descarga-electro{position:fixed;inset:0;z-index:7200;pointer-events:none;opacity:0}
+.descarga-electro.ativa{opacity:1}
+.descarga-electro span{position:absolute;width:3px;height:130%;top:-15%;background:#dffaff;box-shadow:0 0 16px #3bd8ff;transform:rotate(28deg)}
+.descarga-01{left:25%}.descarga-02{left:52%}.descarga-03{left:78%}
+.interferencia-electro{position:fixed;inset:0;z-index:7100;pointer-events:none;opacity:0;background:repeating-linear-gradient(0deg,transparent 0 4px,rgba(80,220,255,.12) 5px)}
+.interferencia-electro.ativa{animation:eleInter .7s steps(2)}
+@keyframes eleInter{50%{opacity:.9;transform:translateX(5px)}}
+.alerta-electro{position:fixed;right:25px;bottom:25px;z-index:7400;padding:18px;background:#020b10;border:1px solid var(--vilao);display:none}
+.alerta-electro.ativa{display:block}
+.aparicao-electro{position:fixed;inset:0;z-index:7450;background:#010609;opacity:0;visibility:hidden;display:grid;place-items:center;pointer-events:none}
+.aparicao-electro.ativa{opacity:1;visibility:visible}
+.aparicao-electro img{max-height:65vh}.aparicao-electro div{text-align:center}
+.rede-electro,.acidente-electro,.transformacao-electro,.energia-electro,.falha-rede-electro,.times-square-electro,.confronto-electro,.usina-electro,.ultimo-registro-electro{padding:100px 7%}
+.energia-barra{height:8px;background:#0a1820;margin:8px 0 24px}.energia-barra span{display:block;height:100%;background:var(--vilao);width:18%;transition:.5s;box-shadow:0 0 18px var(--vilao)}
+.times-square-electro img,.usina-electro img{width:100%;max-height:75vh;object-fit:cover}
+.pagina-electro.sobrecarga section{animation:energiaTremor .12s 3}
+@keyframes energiaTremor{50%{transform:translateX(2px)}}
+
+/* =========================================================
+   007 — MYSTERIO / realidade falsa
+   ========================================================= */
+.pagina-mysterio{--vilao:#75ffc1;--vilao2:#8e5cff;background:#05050a}
+.pagina-mysterio strong,.pagina-mysterio .codigo-ameaca{color:var(--vilao)}
+.entrada-mysterio,.hero-mysterio{background:radial-gradient(circle at 70% 40%,#102b26,#05050a 58%)}
+.hero-mysterio-nevoa,.entrada-mysterio-nevoa,.nevoa-mysterio-global{
+    position:absolute;inset:0;background:radial-gradient(ellipse at 50% 70%,rgba(82,255,177,.16),transparent 48%);
+    filter:blur(20px);pointer-events:none
+}
+.nevoa-mysterio-global{position:fixed;z-index:6500;opacity:0;transition:.5s}
+.pagina-mysterio.realidade-falsa .nevoa-mysterio-global{opacity:.8}
+.ilusao-tela,.glitch-mysterio{
+    position:fixed;inset:0;z-index:7000;pointer-events:none;opacity:0
+}
+.glitch-mysterio{background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(130,255,200,.1) 4px)}
+.glitch-mysterio.ativo{animation:mystGlitch .7s steps(2)}
+@keyframes mystGlitch{25%{opacity:.8;transform:translateX(8px)}55%{opacity:.35;transform:translateX(-10px)}}
+.erro-realidade{position:fixed;right:25px;bottom:25px;z-index:7300;padding:18px;background:#07100d;border:1px solid var(--vilao);display:none;max-width:390px}
+.erro-realidade.ativo{display:block}
+.aparicao-mysterio{
+    position:fixed;inset:0;z-index:7400;background:#030506;display:grid;place-items:center;
+    opacity:0;visibility:hidden;pointer-events:none
+}
+.aparicao-mysterio.ativa{opacity:1;visibility:visible}
+.aparicao-mysterio img{max-height:65vh}.aparicao-mysterio div{text-align:center}
+.duplicacao-mysterio{position:fixed;inset:0;z-index:6900;pointer-events:none;display:none;place-items:center}
+.duplicacao-mysterio.ativa{display:grid}
+.duplicacao-mysterio span{position:absolute;font:15vw "Anton";opacity:.08}
+.duplicacao-mysterio span:nth-child(2){transform:translate(10px,-5px);color:#5ff}
+.duplicacao-mysterio span:nth-child(3){transform:translate(-10px,6px);color:#b5f}
+.falha-mysterio,.mascara-mysterio,.ilusao-mysterio,.sistema-mysterio,.realidade-quebrada,.peter-mysterio,.confronto-mysterio,.mundo-mysterio,.arquivo-falso-mysterio,.ultimo-registro-mysterio{padding:100px 7%}
+.realidade-barra{height:8px;background:#101419;margin:8px 0 24px}.realidade-barra span{display:block;height:100%;width:100%;background:var(--vilao);transition:.5s}
+.informacao-falsa{text-decoration:line-through;opacity:.35}.informacao-corrigida{color:var(--vilao)!important}
+.pagina-mysterio.realidade-falsa .hero-mysterio-identificacao{filter:hue-rotate(80deg);transform:translateX(2px)}
+.arquivo-falso-correcao{margin-top:30px;font:clamp(2rem,6vw,5rem) "Anton";opacity:0;transition:.5s}
+.arquivo-falso-mysterio.revelado .arquivo-falso-correcao{opacity:1}
+
+/* =========================================================
+   008 — HARRY / legado, luto e obsessão
+   ========================================================= */
+.pagina-harry{--vilao:#91d85c;--vilao2:#526451;background:#060706}
+.pagina-harry strong,.pagina-harry .codigo-ameaca{color:var(--vilao)}
+.entrada-harry,.hero-harry{background:linear-gradient(125deg,#070807 48%,#152015)}
+.hero-harry-luz{position:absolute;inset:0;background:linear-gradient(110deg,transparent 45%,rgba(140,220,90,.08))}
+.legado-harry{position:fixed;inset:0;z-index:6500;pointer-events:none;opacity:0;background:radial-gradient(circle at 80% 20%,rgba(80,170,55,.18),transparent 35%);transition:.6s}
+.pagina-harry.legado-ativo .legado-harry{opacity:1}
+.interferencia-harry{position:fixed;inset:0;z-index:6900;pointer-events:none;opacity:0;background:repeating-linear-gradient(0deg,transparent 0 5px,rgba(120,220,80,.08) 6px)}
+.interferencia-harry.ativa{animation:harryInt .8s steps(2)}
+@keyframes harryInt{40%{opacity:.8;transform:translateX(5px)}}
+.memoria-norman,.alvo-peter-harry,.alerta-harry{
+    position:fixed;z-index:7200;padding:18px;background:#080b08;border:1px solid var(--vilao);display:none
+}
+.memoria-norman{left:25px;bottom:25px}.alvo-peter-harry{right:25px;top:95px}.alerta-harry{right:25px;bottom:25px}
+.memoria-norman.ativa,.alvo-peter-harry.ativa,.alerta-harry.ativa{display:block}
+.aparicao-harry{position:fixed;inset:0;z-index:7400;background:#030403;display:grid;place-items:center;opacity:0;visibility:hidden;pointer-events:none}
+.aparicao-harry.ativa{opacity:1;visibility:visible}
+.aparicao-harry img{max-height:68vh}.aparicao-harry div{text-align:center}
+.amizade-harry,.perda-harry,.legado-osborn,.heranca-duende,.novo-duende-section,.planador-harry,.obsessao-harry,.confronto-harry,.alvo-harry-section,.ultimo-registro-harry,.registro-final-harry{padding:100px 7%}
+.relacao-harry-barra{height:8px;background:#161916;margin-top:12px}.relacao-harry-barra span{display:block;height:100%;width:100%;background:var(--vilao);transition:.7s}
+.pagina-harry.legado-ativo .menu-harry{box-shadow:0 0 25px rgba(100,220,70,.12)}
+
+/* =========================================================
+   009 — ABUTRE / radar, caça e tecnologia industrial
+   Classes preparadas para abutre.html
+   ========================================================= */
+.pagina-abutre{--vilao:#91a56a;--vilao2:#d89a3d;background:#060806;color:#edf0e8}
+.pagina-abutre strong,.pagina-abutre .codigo-ameaca{color:var(--vilao)}
+.entrada-abutre,.hero-abutre{
+    background:radial-gradient(circle at 72% 45%,#182016,#050605 58%)
+}
+.hero-abutre-grade,.entrada-abutre-grade{
+    position:absolute;inset:0;opacity:.13;
+    background-image:linear-gradient(rgba(160,180,120,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(160,180,120,.25) 1px,transparent 1px);
+    background-size:52px 52px
+}
+.radar-abutre-global{
+    position:fixed;right:-120px;bottom:-120px;width:420px;height:420px;border:1px solid rgba(150,180,100,.25);
+    border-radius:50%;z-index:50;pointer-events:none;opacity:.35
+}
+.radar-abutre-global::before,.radar-abutre-global::after{content:"";position:absolute;inset:16%;border:1px solid rgba(150,180,100,.22);border-radius:50%}
+.radar-abutre-global::after{inset:33%}
+.radar-varredura{
+    position:absolute;left:50%;top:50%;width:48%;height:1px;background:linear-gradient(90deg,var(--vilao),transparent);
+    transform-origin:left;animation:radarGiro 3s linear infinite
+}
+@keyframes radarGiro{to{transform:rotate(360deg)}}
+.sombra-asas{
+    position:fixed;left:-120%;top:15%;width:110%;height:65%;z-index:7100;pointer-events:none;opacity:0;
+    background:radial-gradient(ellipse at center,#000 0 18%,transparent 20%),
+    linear-gradient(15deg,transparent 0 32%,rgba(0,0,0,.92) 33% 42%,transparent 43%),
+    linear-gradient(-15deg,transparent 0 32%,rgba(0,0,0,.92) 33% 42%,transparent 43%)
+}
+.sombra-asas.ativa{animation:asasPassam 1.3s ease}
+@keyframes asasPassam{15%{opacity:.85}100%{left:120%;opacity:0}}
+.alerta-abutre,.alvo-abutre{
+    position:fixed;z-index:7300;padding:18px;background:#080b07;border:1px solid var(--vilao);display:none
+}
+.alerta-abutre{right:25px;bottom:25px}.alvo-abutre{left:25px;top:95px}
+.alerta-abutre.ativa,.alvo-abutre.ativa{display:block}
+.rastreamento-abutre,.origem-abutre,.tecnologia-abutre,.asas-abutre,.caca-abutre,.confronto-abutre,.ultimo-registro-abutre{padding:100px 7%}
+.radar-painel{position:relative;aspect-ratio:1;border:1px solid rgba(160,180,120,.35);border-radius:50%;overflow:hidden;background:radial-gradient(circle,rgba(140,170,100,.08),transparent 65%)}
+.radar-painel::before,.radar-painel::after{content:"";position:absolute;inset:25%;border:1px solid rgba(160,180,120,.22);border-radius:50%}
+.radar-painel::after{inset:42%}
+.radar-linha{position:absolute;left:50%;top:50%;width:50%;height:2px;background:linear-gradient(90deg,var(--vilao),transparent);transform-origin:left;animation:radarGiro 2.4s linear infinite}
+.radar-alvo{position:absolute;width:10px;height:10px;border:2px solid #ffb24c;border-radius:50%;left:68%;top:32%;opacity:0;box-shadow:0 0 15px #ffb24c}
+.radar-alvo.ativo{opacity:1;animation:alvoPulse .6s infinite alternate}
+@keyframes alvoPulse{to{transform:scale(1.7)}}
+.barra-rastreamento{height:8px;background:#151914;margin:8px 0 22px}.barra-rastreamento span{display:block;height:100%;width:0;background:var(--vilao);transition:.5s}
+.pagina-abutre.modo-caca .menu-abutre{box-shadow:0 0 25px rgba(150,180,100,.16)}
+.pagina-abutre.modo-caca{background:#030503}
+
+/* ---------- Imagens cinematográficas comuns ---------- */
+[class*="-imagem"]{position:relative}
+[class*="-imagem"]>img{width:100%;object-fit:cover}
+.times-square-imagem>img,.usina-electro-imagem>img,.confronto-harry-imagem>img,
+.planador-harry-imagem>img,.mundo-mysterio-imagem>img,.confronto-mysterio-imagem>img,
+.gigante-areia-imagem>img,.confronto-venom-imagem>img,.confronto-lagarto-imagem>img{
+    max-height:76vh
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:1000px){
+    .links-vilao{display:none}
+    .hero-duende,.hero-octopus,.hero-areia,.hero-venom,.hero-lagarto,
+    .hero-electro,.hero-mysterio,.hero-harry,.hero-abutre,
+    .dossie-duende-grid,.dossie-octopus-grid,.flint-grid,.eddie-grid,.connors-grid,.max-grid,
+    .heroi-mysterio-grid,.beck-grid,.harry-grid,.adrian-grid,
+    .sistema-bracos-grid,.estrutura-grid,.analise-venom-grid,.dna-lagarto-grid,
+    .energia-electro-grid,.sistema-mysterio-grid,.legado-osborn-grid,.rastreamento-abutre-grid{
+        grid-template-columns:1fr
+    }
+    .hero-duende-imagem,.hero-octopus-imagem,.hero-areia-imagem,.hero-venom-imagem,
+    .hero-lagarto-imagem,.hero-electro-imagem,.hero-mysterio-imagem,.hero-harry-imagem,.hero-abutre-imagem{
+        height:62vh
+    }
+    .poderes-grid,.arsenal-grid,.capacidades-octopus-grid,.capacidades-areia-grid,
+    .capacidades-venom-grid,.capacidades-lagarto-grid,.capacidades-electro-grid,
+    .drones-mysterio-grid,.arsenal-harry-grid,.capacidades-abutre-grid{
+        grid-template-columns:repeat(2,1fr)
+    }
+}
+@media (max-width:700px){
+    .menu-vilao{height:62px;padding:0 18px}
+    .nivel-menu{display:none}
+    .hero-duende,.hero-octopus,.hero-areia,.hero-venom,.hero-lagarto,
+    .hero-electro,.hero-mysterio,.hero-harry,.hero-abutre{padding:55px 20px}
+    .hero-duende h1,.hero-octopus h1,.hero-areia h1,.hero-venom h1,.hero-lagarto h1,
+    .hero-electro h1,.hero-mysterio h1,.hero-harry h1,.hero-abutre h1{font-size:clamp(3.3rem,18vw,6rem)}
+    .hero-duende-imagem,.hero-octopus-imagem,.hero-areia-imagem,.hero-venom-imagem,
+    .hero-lagarto-imagem,.hero-electro-imagem,.hero-mysterio-imagem,.hero-harry-imagem,.hero-abutre-imagem{height:52vh}
+    .hero-duende-lateral,.hero-octopus-lateral,.hero-areia-lateral,.hero-venom-lateral,
+    .hero-lagarto-lateral,.hero-electro-lateral,.hero-mysterio-lateral,.hero-harry-lateral,.hero-abutre-lateral{display:none}
+    .dossie-duende,.dossie-octopus,.flint-section,.eddie-section,.connors-section,.max-section,
+    .heroi-mysterio,.beck-section,.harry-section,.adrian-section,
+    .capacidades-duende,.capacidades-octopus,.capacidades-areia,.capacidades-venom,
+    .capacidades-lagarto,.capacidades-electro,.drones-mysterio,.arsenal-harry,.capacidades-abutre,
+    .nivel-ameaca-duende,.nivel-ameaca-octopus,.nivel-ameaca-areia,.nivel-ameaca-venom,
+    .nivel-ameaca-lagarto,.nivel-ameaca-electro,.nivel-ameaca-mysterio,.nivel-ameaca-harry,.nivel-ameaca-abutre,
+    .rede-electro,.acidente-electro,.transformacao-electro,.energia-electro,.falha-rede-electro,.times-square-electro,
+    .confronto-electro,.usina-electro,.falha-mysterio,.mascara-mysterio,.ilusao-mysterio,.sistema-mysterio,
+    .realidade-quebrada,.peter-mysterio,.confronto-mysterio,.mundo-mysterio,.arquivo-falso-mysterio,
+    .amizade-harry,.perda-harry,.legado-osborn,.heranca-duende,.novo-duende-section,.planador-harry,
+    .obsessao-harry,.confronto-harry,.alvo-harry-section,.registro-final-harry,
+    .rastreamento-abutre,.origem-abutre,.tecnologia-abutre,.asas-abutre,.caca-abutre,.confronto-abutre{
+        padding:75px 20px
+    }
+    .poderes-grid,.arsenal-grid,.capacidades-octopus-grid,.capacidades-areia-grid,
+    .capacidades-venom-grid,.capacidades-lagarto-grid,.capacidades-electro-grid,
+    .drones-mysterio-grid,.arsenal-harry-grid,.capacidades-abutre-grid,
+    .ameaca-estatisticas,.outras-ameacas-links{grid-template-columns:1fr}
+    .entrada-duende-dados,.entrada-octopus-dados,.entrada-areia-dados,.entrada-venom-dados,
+    .entrada-lagarto-dados,.entrada-electro-dados,.entrada-mysterio-dados,.entrada-harry-dados{display:none}
+    .footer-vilao{flex-direction:column;align-items:flex-start}
+}
+
+
+/* =========================================================
+   REFINAMENTO FINAL — IDENTIDADE, ENQUADRAMENTO E ARQUIVO 009
+   Mantém as nove páginas distintas e corrige seletores do HTML final.
+   ========================================================= */
+
+/* ---------- acabamento compartilhado ---------- */
+body[class^="pagina-"]{--painel:rgba(255,255,255,.035);--linha-forte:rgba(255,255,255,.18)}
+body[class^="pagina-"] section{isolation:isolate}
+body[class^="pagina-"] section::selection{background:var(--vilao);color:#050607}
+.menu-vilao a:focus-visible,button:focus-visible{outline:2px solid var(--vilao);outline-offset:5px}
+.botao-duende:hover,.botao-octopus:hover,.botao-areia:hover,.botao-venom:hover,.botao-lagarto:hover,
+.botao-electro:hover,.botao-mysterio:hover,.botao-harry:hover,.botao-abutre:hover,
+.botao-instabilidade:hover,.botao-desconectar:hover,.botao-analisar-areia:hover,.botao-analisar-venom:hover,
+.botao-analisar-lagarto:hover,.botao-sobrecarga:hover,.botao-analisar-mysterio:hover,.botao-legado-harry:hover,
+.botao-rastrear-abutre:hover{background:var(--vilao);color:#050607;box-shadow:0 0 28px color-mix(in srgb,var(--vilao) 28%,transparent)}
+
+/* painéis técnicos / dossiês */
+.painel-neural,.painel-molecular,.painel-venom,.painel-dna,.painel-energia,.painel-mysterio,
+.arquivo-norman-harry,.painel-asas-abutre,.painel-rastreamento-abutre{
+    padding:28px;border:1px solid var(--linha-forte);background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+    box-shadow:0 24px 70px rgba(0,0,0,.24)
+}
+
+/* ---------- enquadramento por página: não cortar rostos importantes ---------- */
+.pagina-duende .hero-duende-imagem img{object-position:center 28%}
+.pagina-octopus .hero-octopus-imagem img{object-position:center 35%}
+.pagina-areia .hero-areia-imagem img{object-position:center 24%}
+.pagina-venom .hero-venom-imagem img{object-position:center 30%}
+.pagina-lagarto .hero-lagarto-imagem img{object-position:center 35%}
+.pagina-electro .hero-electro-imagem img{object-position:center 30%}
+.pagina-mysterio .hero-mysterio-imagem img{object-position:center 34%}
+.pagina-harry .hero-harry-imagem img{object-position:center 22%}
+.pagina-abutre .hero-abutre-imagem img{object-position:center center}
+
+/* =========================================================
+   001 — DUENDE: instabilidade psicológica
+   ========================================================= */
+.pagina-duende .mente-duende{background:linear-gradient(115deg,#020302,#09120a)}
+.pagina-duende .mente-comparacao{border-left:2px solid var(--vilao);padding-left:24px}
+.pagina-duende .arma-duende:hover{box-shadow:0 0 35px rgba(100,255,93,.08)}
+.pagina-duende .dossie-foto img,.pagina-duende .origem-imagem img{filter:saturate(.78) contrast(1.08)}
+
+/* =========================================================
+   002 — OCTOPUS: máquina claustrofóbica
+   ========================================================= */
+.pagina-octopus .sistema-bracos{background:linear-gradient(#070707,#0d0806)}
+.pagina-octopus .reator-brilho{position:absolute;inset:20%;border-radius:50%;box-shadow:0 0 90px rgba(255,92,35,.32);pointer-events:none}
+.pagina-octopus .capacidade-octopus{border-top-color:rgba(255,91,40,.5)}
+.pagina-octopus.bracos-ativos .sistema-bracos{box-shadow:inset 0 0 80px rgba(255,55,20,.05)}
+
+/* =========================================================
+   003 — AREIA: matéria se desfazendo
+   ========================================================= */
+.pagina-areia .flint-section{background:linear-gradient(180deg,#0c0a07,#12100b)}
+.pagina-areia .transformacao-areia{background:radial-gradient(circle at 70% 50%,rgba(166,117,54,.17),transparent 42%)}
+.pagina-areia .molecular-barra{height:7px;background:#211b12;overflow:hidden;margin-top:8px}
+.pagina-areia .molecular-barra span{display:block;height:100%;background:var(--vilao);transition:width .8s ease}
+.pagina-areia .gigante-areia-imagem img{object-position:center 35%}
+
+/* =========================================================
+   004 — VENOM: interface orgânica
+   ========================================================= */
+.pagina-venom .capacidade-venom{border-radius:24px 4px 24px 4px}
+.pagina-venom .invasao-venom{background:radial-gradient(ellipse at 50% 100%,#100d14,#010101 62%)}
+.pagina-venom .nos-somos-venom{text-align:center;background:#000;min-height:60vh;display:grid;place-items:center}
+.pagina-venom .nos-somos-final{font:clamp(3.5rem,10vw,10rem) "Anton";letter-spacing:.06em}
+.pagina-venom .fraqueza-venom{overflow:hidden}
+.pagina-venom .confronto-venom-imagem img{object-position:center 35%}
+
+/* =========================================================
+   005 — LAGARTO: relatório científico contaminado
+   ========================================================= */
+.pagina-lagarto .dna-lagarto{background:linear-gradient(180deg,#050907,#07110b)}
+.pagina-lagarto .dna-scan{position:absolute;inset:0;background:linear-gradient(transparent 48%,rgba(118,211,108,.22) 50%,transparent 52%);background-size:100% 34px;pointer-events:none}
+.pagina-lagarto .molecular-barra,.pagina-lagarto .dna-barra{height:7px;background:#0d1a11;overflow:hidden}
+.pagina-lagarto #barraHumano,.pagina-lagarto #barraReptiliano,.pagina-lagarto #barraEstabilidadeLagarto{display:block;height:100%;background:var(--vilao);transition:width .8s ease}
+.pagina-lagarto.contaminado .menu-lagarto{border-bottom-color:rgba(118,211,108,.4)}
+
+/* =========================================================
+   006 — ELECTRO: energia e apagão
+   ========================================================= */
+.pagina-electro .capacidade-electro:hover{box-shadow:0 0 34px rgba(88,217,255,.12)}
+.pagina-electro .energia-electro{background:linear-gradient(180deg,#02070b,#04111a)}
+.pagina-electro .times-square-electro{overflow:hidden}
+.pagina-electro .times-square-electro::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,160,255,.08),transparent 35%,rgba(80,210,255,.08))}
+.pagina-electro.sobrecarga .menu-electro{box-shadow:0 0 30px rgba(88,217,255,.18)}
+
+/* =========================================================
+   007 — MYSTERIO: ilusão / interface não confiável
+   ========================================================= */
+.pagina-mysterio .sistema-mysterio,.pagina-mysterio .arquivo-falso-mysterio{background:linear-gradient(135deg,rgba(117,255,193,.035),rgba(142,92,255,.04))}
+.pagina-mysterio .drone-mysterio:hover{box-shadow:10px 8px 0 rgba(142,92,255,.07),-8px -6px 0 rgba(117,255,193,.05)}
+.pagina-mysterio.realidade-falsa section:nth-of-type(even){filter:hue-rotate(4deg)}
+.pagina-mysterio .mundo-mysterio-imagem img{object-position:center 38%}
+
+/* =========================================================
+   008 — HARRY: herança elegante que vira obsessão
+   ========================================================= */
+.pagina-harry .harry-section{background:linear-gradient(180deg,#060706,#0a0c09)}
+.pagina-harry .legado-osborn{background:linear-gradient(120deg,#070807,#10180e)}
+.pagina-harry .heranca-duende{background:radial-gradient(circle at 50% 60%,rgba(115,190,70,.12),#030403 58%)}
+.pagina-harry .novo-duende-section{background:#040604}
+.pagina-harry .obsessao-item{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--linha)}
+.pagina-harry .evolucao-alvo-harry{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:18px;align-items:center;margin-top:45px}
+.pagina-harry .evolucao-alvo-harry>div{padding:24px;border:1px solid var(--linha)}
+.pagina-harry .evolucao-alvo-harry>i{width:45px;height:1px;background:var(--vilao)}
+.pagina-harry.legado-ativo .hero-harry-luz{opacity:1;animation:herancaPulso 2s ease-in-out infinite alternate}
+@keyframes herancaPulso{to{filter:brightness(1.6)}}
+
+/* =========================================================
+   009 — ABUTRE: radar, altitude e caça
+   HTML final usa nomes diferentes da versão de rascunho.
+   ========================================================= */
+.entrada-abutre-dados{position:absolute;left:5%;right:5%;bottom:35px;z-index:3;display:flex;justify-content:space-between;gap:20px;font-size:.68rem;letter-spacing:.18em;color:#899097}
+.entrada-abutre-radar{position:absolute;width:min(58vw,620px);aspect-ratio:1;border:1px solid rgba(145,165,106,.18);border-radius:50%;opacity:.45}
+.entrada-abutre-radar::before,.entrada-abutre-radar::after{content:"";position:absolute;border:1px solid rgba(145,165,106,.15);border-radius:50%}
+.entrada-abutre-radar::before{inset:20%}.entrada-abutre-radar::after{inset:40%}
+.entrada-abutre-radar span{position:absolute;left:50%;top:50%;width:50%;height:1px;transform-origin:left;background:linear-gradient(90deg,var(--vilao),transparent);animation:radarGiro 2.8s linear infinite}
+.entrada-abutre-varredura{position:absolute;inset:0;background:linear-gradient(transparent 49.7%,rgba(145,165,106,.08) 50%,transparent 50.3%);background-size:100% 70px;opacity:.4}
+
+/* alias do radar global do HTML final */
+.radar-global-abutre{position:fixed;right:-120px;bottom:-120px;width:420px;height:420px;border:1px solid rgba(150,180,100,.25);border-radius:50%;z-index:50;pointer-events:none;opacity:.28}
+.radar-global-abutre .radar-circulo{position:absolute;border:1px solid rgba(150,180,100,.18);border-radius:50%}
+.radar-global-abutre .radar-circulo-01{inset:8%}.radar-global-abutre .radar-circulo-02{inset:25%}.radar-global-abutre .radar-circulo-03{inset:42%}
+.radar-global-abutre .radar-linha{position:absolute;left:50%;top:50%;width:48%;height:1px;transform-origin:left;background:linear-gradient(90deg,var(--vilao),transparent);animation:radarGiro 3s linear infinite}
+.radar-global-abutre .radar-alvo{left:66%;top:29%}
+
+.sombra-asas-abutre{position:fixed;left:-130%;top:12%;width:120%;height:70%;z-index:7100;pointer-events:none;opacity:0;display:flex;align-items:center;justify-content:center;filter:blur(2px)}
+.sombra-asas-abutre span{display:block;background:#000}
+.sombra-asa-esquerda,.sombra-asa-direita{width:44%;height:34%;clip-path:polygon(0 50%,100% 0,88% 45%,100% 100%)}
+.sombra-asa-direita{transform:scaleX(-1)}
+.sombra-corpo{width:9%;height:45%;border-radius:50%}
+.sombra-asas-abutre.ativa{animation:asasPassam 1.25s ease}
+
+.interferencia-abutre{position:fixed;inset:0;z-index:7000;pointer-events:none;opacity:0;background:repeating-linear-gradient(0deg,transparent 0 5px,rgba(145,165,106,.08) 6px)}
+.interferencia-abutre.ativa{animation:abutreInter .65s steps(2)}
+@keyframes abutreInter{35%{opacity:.75;transform:translateX(4px)}70%{opacity:.25;transform:translateX(-5px)}}
+
+.aparicao-abutre{position:fixed;inset:0;z-index:7400;background:#020302;display:grid;place-items:center;opacity:0;visibility:hidden;pointer-events:none;transition:.18s}
+.aparicao-abutre.ativa{opacity:1;visibility:visible}
+.aparicao-abutre img{width:min(1000px,88vw);max-height:66vh;object-fit:cover;object-position:center}
+.aparicao-abutre div{text-align:center;margin-top:18px}.aparicao-abutre strong{display:block;font:clamp(3rem,8vw,7rem) "Anton"}
+
+.pagina-abutre .toomes-section,.pagina-abutre .origem-abutre,.pagina-abutre .tecnologia-abutre,
+.pagina-abutre .asas-abutre,.pagina-abutre .voo-abutre,.pagina-abutre .capacidades-abutre,
+.pagina-abutre .rastreamento-abutre,.pagina-abutre .predador-abutre,.pagina-abutre .confronto-abutre,
+.pagina-abutre .final-abutre,.pagina-abutre .ultimo-registro-abutre,.pagina-abutre .registro-final-abutre,
+.pagina-abutre .arquivos-concluidos-abutre{padding:100px 7%}
+
+.toomes-grid,.asas-abutre-grid,.rastreamento-abutre-grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center;margin-top:45px}
+.toomes-dados>div{padding:15px 0;border-bottom:1px solid var(--linha);display:flex;justify-content:space-between;gap:20px}
+.toomes-dados span{font-size:.65rem;letter-spacing:.12em;opacity:.55}.toomes-dados strong{font-size:.85rem;text-align:right}
+
+.tecnologia-abutre-grid,.capacidades-abutre-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:45px}
+.tecnologia-abutre-card,.capacidade-abutre{padding:28px;min-height:230px;border:1px solid var(--linha);background:rgba(255,255,255,.025);transition:.25s}
+.tecnologia-abutre-card:hover,.capacidade-abutre:hover{transform:translateY(-6px);border-color:rgba(145,165,106,.45);background:rgba(145,165,106,.04)}
+
+.asas-abutre-imagem{overflow:hidden}.asas-abutre-imagem img{min-height:520px;object-fit:cover}
+.marcador-asa{position:absolute;padding:6px 8px;border:1px solid rgba(145,165,106,.55);background:rgba(3,5,3,.72);font-size:.58rem;letter-spacing:.1em}
+.marcador-asa-esquerda{left:10%;top:38%}.marcador-asa-direita{right:10%;top:38%}.marcador-turbina{right:18%;bottom:16%}.marcador-operador{left:47%;top:28%}
+.asa-status,.rastreamento-dados>div{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--linha);font-size:.72rem}
+
+.voo-abutre{display:grid;grid-template-columns:1.5fr .7fr;gap:5vw;align-items:center;background:#030503}
+.voo-abutre-imagem{overflow:hidden}.voo-abutre-imagem img{width:100%;max-height:75vh;object-fit:cover}
+.voo-abutre-hud{position:absolute;left:18px;right:18px;bottom:18px;display:flex;justify-content:space-between;font-size:.58rem;letter-spacing:.12em}
+.voo-abutre-alvo{position:absolute;left:70%;top:45%;font:2.5rem monospace;color:var(--vilao);text-shadow:0 0 12px var(--vilao)}
+
+.radar-abutre{position:relative;aspect-ratio:1;border:1px solid rgba(145,165,106,.4);border-radius:50%;overflow:hidden;background:radial-gradient(circle,rgba(145,165,106,.1),#030503 68%)}
+.radar-abutre-circulo{position:absolute;border:1px solid rgba(145,165,106,.18);border-radius:50%}.circulo-01{inset:8%}.circulo-02{inset:22%}.circulo-03{inset:36%}.circulo-04{inset:48%}
+.radar-abutre-horizontal,.radar-abutre-vertical{position:absolute;background:rgba(145,165,106,.18)}
+.radar-abutre-horizontal{left:5%;right:5%;height:1px;top:50%}.radar-abutre-vertical{top:5%;bottom:5%;width:1px;left:50%}
+.radar-abutre-varredura{position:absolute;left:50%;top:50%;width:48%;height:2px;transform-origin:left;background:linear-gradient(90deg,var(--vilao),transparent);opacity:.25}
+.radar-abutre-varredura.ativa{opacity:1;animation:radarGiro 1.6s linear infinite}
+.radar-ponto{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--vilao);box-shadow:0 0 12px var(--vilao);opacity:.45}.radar-ponto-01{left:30%;top:64%}.radar-ponto-02{left:62%;top:72%}.radar-ponto-alvo{left:70%;top:28%;opacity:0;background:#ffb24c;box-shadow:0 0 18px #ffb24c}.radar-ponto-alvo.ativo{opacity:1;animation:alvoPulse .55s infinite alternate}
+.radar-abutre-centro{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:1.6rem monospace;color:var(--vilao)}
+.radar-abutre-coordenadas{position:absolute;left:10%;right:10%;bottom:8%;display:flex;justify-content:space-between;font-size:.55rem;letter-spacing:.12em;opacity:.6}
+
+.predador-abutre{min-height:62vh;display:grid;place-items:center;text-align:center;overflow:hidden;background:#020302}
+.predador-abutre-conteudo{position:relative;z-index:3;max-width:900px}.predador-abutre-final{display:block;margin-top:28px;font:clamp(2rem,5vw,5rem) "Anton"}
+.final-abutre-imagem{overflow:hidden}.final-abutre-imagem img{width:100%;max-height:78vh;object-fit:cover;object-position:center 45%}
+.final-abutre-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.88))}
+.final-abutre-dados{position:absolute;left:25px;right:25px;bottom:22px;display:flex;justify-content:space-between;gap:15px;font-size:.6rem;letter-spacing:.12em}
+
+.arquivos-concluidos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.arquivos-concluidos-grid a{padding:22px;border:1px solid var(--linha);display:flex;flex-direction:column;gap:8px;transition:.25s}.arquivos-concluidos-grid a:hover{transform:translateY(-4px);border-color:var(--vilao)}
+.arquivos-concluidos-grid span{font-size:.62rem;opacity:.5}.arquivos-concluidos-grid strong{font:1.45rem "Anton"}.arquivo-atual-abutre{background:rgba(145,165,106,.08)}
+
+/* ---------- imagens secundárias: alturas seguras ---------- */
+.dossie-foto img,.arquivo-foto img,.eddie-foto img,.connors-foto img,.harry-foto img,.toomes-foto img{width:100%;max-height:620px;object-fit:cover}
+.pagina-areia .flint-foto img{max-height:430px;object-fit:contain;background:#080705}
+.pagina-areia .flint-foto{max-width:500px}
+
+/* ---------- movimento reduzido ---------- */
+@media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}.secao-animada{opacity:1;transform:none;transition:none}
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+@media (max-width:1000px){
+    .toomes-grid,.asas-abutre-grid,.rastreamento-abutre-grid,.voo-abutre{grid-template-columns:1fr}
+    .tecnologia-abutre-grid,.capacidades-abutre-grid,.arquivos-concluidos-grid{grid-template-columns:repeat(2,1fr)}
+    .evolucao-alvo-harry{grid-template-columns:1fr}.evolucao-alvo-harry>i{width:1px;height:28px;justify-self:center}
+}
+@media (max-width:700px){
+    .entrada-abutre-dados{display:none}
+    .pagina-abutre .toomes-section,.pagina-abutre .origem-abutre,.pagina-abutre .tecnologia-abutre,
+    .pagina-abutre .asas-abutre,.pagina-abutre .voo-abutre,.pagina-abutre .capacidades-abutre,
+    .pagina-abutre .rastreamento-abutre,.pagina-abutre .predador-abutre,.pagina-abutre .confronto-abutre,
+    .pagina-abutre .final-abutre,.pagina-abutre .ultimo-registro-abutre,.pagina-abutre .registro-final-abutre,
+    .pagina-abutre .arquivos-concluidos-abutre{padding:75px 20px}
+    .tecnologia-abutre-grid,.capacidades-abutre-grid,.arquivos-concluidos-grid{grid-template-columns:1fr}
+    .radar-global-abutre{width:280px;height:280px;right:-120px;bottom:-120px}
+    .final-abutre-dados,.voo-abutre-hud{flex-direction:column;align-items:flex-start}
+    .memoria-norman,.alvo-peter-harry,.alerta-harry,.alerta-abutre{left:14px;right:14px;width:auto}
+}
